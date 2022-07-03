@@ -297,153 +297,157 @@ const ApplicationForm = () => {
                                             {/* Mailing Address */}
                                             <td style={{ width: '48%' }}>
                                                 <table cellPadding="5" style={{ width: '100%', border: '1px solid #99C1D0' }}>
+                                                    <tbody>
 
-                                                    <tr>
-                                                        <td colSpan="2">Mailing Address</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Care of</td>
-                                                        <td><input type="textarea" /></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Village/Town/Road</td>
-                                                        <td><input type="textarea" /></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>District</td>
-                                                        <td>
-                                                            <select style={{ width: '100%' }}>
-                                                                <option value="0" >Select One</option>
-                                                                <option value="26">Bagerhat</option>
-                                                                <option value="64">Bandarban</option>
-                                                                <option value="32">Barguna</option>
-                                                                <option value="29">Barishal</option>
-                                                                <option value="30">Bhola</option>
-                                                                <option value="10">Bogura</option>
-                                                                <option value="54">Brahmanbaria</option>
-                                                                <option value="56">Chandpur</option>
-                                                                <option value="13">Chapai Nawabganj</option>
-                                                                <option value="60">Chattogram</option>
-                                                                <option value="19">Chuadanga</option>
-                                                                <option value="61">Cox`s Bazar</option>
-                                                                <option value="55">Cumilla</option>
-                                                                <option value="40">Dhaka</option>
-                                                                <option value="03">Dinajpur</option>
-                                                                <option value="45">Faridpur</option>
-                                                                <option value="59">Feni</option>
-                                                                <option value="08">Gaibandha</option>
-                                                                <option value="41">Gazipur</option>
-                                                                <option value="47">Gopalganj</option>
-                                                                <option value="53">Habiganj</option>
-                                                                <option value="09">Jaipurhat</option>
-                                                                <option value="36">Jamalpur</option>
-                                                                <option value="23">Jashore</option>
-                                                                <option value="28">Jhalokhathi</option>
-                                                                <option value="20">Jhenaidah</option>
-                                                                <option value="62">Khagrachhari</option>
-                                                                <option value="25">Khulna</option>
-                                                                <option value="38">Kishorganj</option>
-                                                                <option value="07">Kurigram</option>
-                                                                <option value="17">Kushtia</option>
-                                                                <option value="05">Lalmonirhat</option>
-                                                                <option value="57">Luxmipur</option>
-                                                                <option value="48">Madaripur</option>
-                                                                <option value="21">Magura</option>
-                                                                <option value="39">Manikganj</option>
-                                                                <option value="18">Meharpur</option>
-                                                                <option value="52">Mouluvibazar</option>
-                                                                <option value="44">Munshiganj</option>
-                                                                <option value="34">Mymensingh</option>
-                                                                <option value="11">Naogaon</option>
-                                                                <option value="22">Narail</option>
-                                                                <option value="43">Narayanganj</option>
-                                                                <option value="42">Narsingdi</option>
-                                                                <option value="12">Natore</option>
-                                                                <option value="33">Netrokona</option>
-                                                                <option value="04">Nilphamari</option>
-                                                                <option value="58">Noakhali</option>
-                                                                <option value="16">Pabna</option>
-                                                                <option value="01">Panchagarh</option>
-                                                                <option value="31">Patuakhali</option>
-                                                                <option value="27">Pirojpur</option>
-                                                                <option value="46">Rajbari</option>
-                                                                <option value="14">Rajshahi</option>
-                                                                <option value="63">Rangamati</option>
-                                                                <option value="06">Rangpur</option>
-                                                                <option value="24">Satkhira</option>
-                                                                <option value="49">Shariatpur</option>
-                                                                <option value="35">Sherpur</option>
-                                                                <option value="15">Sirajganj</option>
-                                                                <option value="50">Sunamganj</option>
-                                                                <option value="51">Sylhet</option>
-                                                                <option value="37">Tangail</option>
-                                                                <option value="02">Thakurgaon</option>
-                                                            </select>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Upzilla</td>
-                                                        <td>
-                                                            <select style={{ width: '100%' }}>
-                                                                <option>Select One</option>
-                                                                <option>Charfassion</option>
-                                                                <option>Bhola</option>
-                                                                <option>Burhanuddin</option>
-                                                                <option>Lalmohon</option>
-                                                            </select>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Post Office</td>
-                                                        <td><input type="text" /></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Post Code</td>
-                                                        <td><input type="number" /></td>
-                                                    </tr>
+                                                        <tr>
+                                                            <td colSpan="2">Mailing Address</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Care of</td>
+                                                            <td><input type="textarea" /></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Village/Town/Road</td>
+                                                            <td><input type="textarea" /></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>District</td>
+                                                            <td>
+                                                                <select style={{ width: '100%' }}>
+                                                                    <option value="0" >Select One</option>
+                                                                    <option value="26">Bagerhat</option>
+                                                                    <option value="64">Bandarban</option>
+                                                                    <option value="32">Barguna</option>
+                                                                    <option value="29">Barishal</option>
+                                                                    <option value="30">Bhola</option>
+                                                                    <option value="10">Bogura</option>
+                                                                    <option value="54">Brahmanbaria</option>
+                                                                    <option value="56">Chandpur</option>
+                                                                    <option value="13">Chapai Nawabganj</option>
+                                                                    <option value="60">Chattogram</option>
+                                                                    <option value="19">Chuadanga</option>
+                                                                    <option value="61">Cox`s Bazar</option>
+                                                                    <option value="55">Cumilla</option>
+                                                                    <option value="40">Dhaka</option>
+                                                                    <option value="03">Dinajpur</option>
+                                                                    <option value="45">Faridpur</option>
+                                                                    <option value="59">Feni</option>
+                                                                    <option value="08">Gaibandha</option>
+                                                                    <option value="41">Gazipur</option>
+                                                                    <option value="47">Gopalganj</option>
+                                                                    <option value="53">Habiganj</option>
+                                                                    <option value="09">Jaipurhat</option>
+                                                                    <option value="36">Jamalpur</option>
+                                                                    <option value="23">Jashore</option>
+                                                                    <option value="28">Jhalokhathi</option>
+                                                                    <option value="20">Jhenaidah</option>
+                                                                    <option value="62">Khagrachhari</option>
+                                                                    <option value="25">Khulna</option>
+                                                                    <option value="38">Kishorganj</option>
+                                                                    <option value="07">Kurigram</option>
+                                                                    <option value="17">Kushtia</option>
+                                                                    <option value="05">Lalmonirhat</option>
+                                                                    <option value="57">Luxmipur</option>
+                                                                    <option value="48">Madaripur</option>
+                                                                    <option value="21">Magura</option>
+                                                                    <option value="39">Manikganj</option>
+                                                                    <option value="18">Meharpur</option>
+                                                                    <option value="52">Mouluvibazar</option>
+                                                                    <option value="44">Munshiganj</option>
+                                                                    <option value="34">Mymensingh</option>
+                                                                    <option value="11">Naogaon</option>
+                                                                    <option value="22">Narail</option>
+                                                                    <option value="43">Narayanganj</option>
+                                                                    <option value="42">Narsingdi</option>
+                                                                    <option value="12">Natore</option>
+                                                                    <option value="33">Netrokona</option>
+                                                                    <option value="04">Nilphamari</option>
+                                                                    <option value="58">Noakhali</option>
+                                                                    <option value="16">Pabna</option>
+                                                                    <option value="01">Panchagarh</option>
+                                                                    <option value="31">Patuakhali</option>
+                                                                    <option value="27">Pirojpur</option>
+                                                                    <option value="46">Rajbari</option>
+                                                                    <option value="14">Rajshahi</option>
+                                                                    <option value="63">Rangamati</option>
+                                                                    <option value="06">Rangpur</option>
+                                                                    <option value="24">Satkhira</option>
+                                                                    <option value="49">Shariatpur</option>
+                                                                    <option value="35">Sherpur</option>
+                                                                    <option value="15">Sirajganj</option>
+                                                                    <option value="50">Sunamganj</option>
+                                                                    <option value="51">Sylhet</option>
+                                                                    <option value="37">Tangail</option>
+                                                                    <option value="02">Thakurgaon</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Upzilla</td>
+                                                            <td>
+                                                                <select style={{ width: '100%' }}>
+                                                                    <option>Select One</option>
+                                                                    <option>Charfassion</option>
+                                                                    <option>Bhola</option>
+                                                                    <option>Burhanuddin</option>
+                                                                    <option>Lalmohon</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Post Office</td>
+                                                            <td><input type="text" /></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Post Code</td>
+                                                            <td><input type="number" /></td>
+                                                        </tr>
+                                                    </tbody>
                                                 </table>
                                             </td>
                                             <td style={{ width: '2%', backgroundColor: '#dfdfdf' }}> </td>
                                             <td style={{ width: '48%' }}>
                                                 <table cellPadding="5" style={{ width: '100%', border: '1px solid #99C1D0' }}>
+                                                    <tbody>
 
-                                                    <tr>
-                                                        <td colSpan="2">Permanent Address</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Care of</td>
-                                                        <td><input type="text" /></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Village/Town/Road</td>
-                                                        <td><input type="text" /></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>District</td>
-                                                        <td>
-                                                            <select id='district' style={{ width: '100%' }}>
-                                                                <option value="" >Select District</option>
+                                                        <tr>
+                                                            <td colSpan="2">Permanent Address</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Care of</td>
+                                                            <td><input type="text" /></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Village/Town/Road</td>
+                                                            <td><input type="text" /></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>District</td>
+                                                            <td>
+                                                                <select id='district' style={{ width: '100%' }}>
+                                                                    <option value="" >Select District</option>
 
-                                                            </select>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Upzilla</td>
-                                                        <td>
-                                                            <select id='upzilla' style={{ width: '100%' }}>
-                                                                <option value="" >Select Upzilla</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Upzilla</td>
+                                                            <td>
+                                                                <select id='upzilla' style={{ width: '100%' }}>
+                                                                    <option value="" >Select Upzilla</option>
 
-                                                            </select>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Post Office</td>
-                                                        <td><input type="text" /></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Post Code</td>
-                                                        <td><input type="number" /></td>
-                                                    </tr>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Post Office</td>
+                                                            <td><input type="text" /></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Post Code</td>
+                                                            <td><input type="number" /></td>
+                                                        </tr>
+                                                    </tbody>
                                                 </table>
                                             </td>
                                         </tr>
@@ -476,115 +480,119 @@ const ApplicationForm = () => {
                                             {/* SSC or Equivalent */}
                                             <td style={{ width: '48%' }}>
                                                 <table cellPadding="5" style={{ width: '100%', border: '1px solid #99C1D0' }}>
+                                                    <tbody>
 
-                                                    <tr>
-                                                        <td colSpan="2">SSC or Equivalent Level</td>
-                                                    </tr>
+                                                        <tr>
+                                                            <td colSpan="2">SSC or Equivalent Level</td>
+                                                        </tr>
 
-                                                    <tr>
-                                                        <td>Examination</td>
-                                                        <td>
-                                                            <select style={{ width: '100%' }}>
-                                                                <option value="0" >Select One</option>
+                                                        <tr>
+                                                            <td>Examination</td>
+                                                            <td>
+                                                                <select style={{ width: '100%' }}>
+                                                                    <option value="0" >Select One</option>
 
-                                                            </select>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Board</td>
-                                                        <td>
-                                                            <select style={{ width: '100%' }}>
-                                                                <option>Select One</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Board</td>
+                                                            <td>
+                                                                <select style={{ width: '100%' }}>
+                                                                    <option>Select One</option>
 
-                                                            </select>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Roll No</td>
-                                                        <td><input type="text" /></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Result</td>
-                                                        <td>
-                                                            <select style={{ width: '100%' }}>
-                                                                <option value="0" >Select One</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Roll No</td>
+                                                            <td><input type="text" /></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Result</td>
+                                                            <td>
+                                                                <select style={{ width: '100%' }}>
+                                                                    <option value="0" >Select One</option>
 
-                                                            </select>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Group/Subject</td>
-                                                        <td>
-                                                            <select style={{ width: '100%' }}>
-                                                                <option value="0" >Select One</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Group/Subject</td>
+                                                            <td>
+                                                                <select style={{ width: '100%' }}>
+                                                                    <option value="0" >Select One</option>
 
-                                                            </select>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Passing Year</td>
-                                                        <td>
-                                                            <select style={{ width: '100%' }}>
-                                                                <option value="0" >Select One</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Passing Year</td>
+                                                            <td>
+                                                                <select style={{ width: '100%' }}>
+                                                                    <option value="0" >Select One</option>
 
-                                                            </select>
-                                                        </td>
-                                                    </tr>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
                                                 </table>
                                             </td>
                                             <td style={{ width: '2%', backgroundColor: '#dfdfdf' }}> </td>
                                             {/* HSC or Equivalent */}
                                             <td style={{ width: '48%' }}>
                                                 <table cellPadding="5" style={{ width: '100%', border: '1px solid #99C1D0' }}>
+                                                    <tbody>
 
-                                                    <tr>
-                                                        <td colSpan="2">HSC or Equivalent Level</td>
-                                                    </tr>
+                                                        <tr>
+                                                            <td colSpan="2">HSC or Equivalent Level</td>
+                                                        </tr>
 
-                                                    <tr>
-                                                        <td>Examination</td>
-                                                        <td>
-                                                            <select style={{ width: '100%' }}>
-                                                                <option value="0" >Select One</option>
-                                                            </select>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Board</td>
-                                                        <td>
-                                                            <select style={{ width: '100%' }}>
-                                                                <option>Select One</option>
-                                                            </select>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Roll No</td>
-                                                        <td><input type="text" /></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Result</td>
-                                                        <td>
-                                                            <select style={{ width: '100%' }}>
-                                                                <option value="0" >Select One</option>
-                                                            </select>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Group/Subject</td>
-                                                        <td>
-                                                            <select style={{ width: '100%' }}>
-                                                                <option value="0" >Select One</option>
-                                                            </select>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Passing Year</td>
-                                                        <td>
-                                                            <select style={{ width: '100%' }}>
-                                                                <option value="0" >Select One</option>
-                                                            </select>
-                                                        </td>
-                                                    </tr>
+                                                        <tr>
+                                                            <td>Examination</td>
+                                                            <td>
+                                                                <select style={{ width: '100%' }}>
+                                                                    <option value="0" >Select One</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Board</td>
+                                                            <td>
+                                                                <select style={{ width: '100%' }}>
+                                                                    <option>Select One</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Roll No</td>
+                                                            <td><input type="text" /></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Result</td>
+                                                            <td>
+                                                                <select style={{ width: '100%' }}>
+                                                                    <option value="0" >Select One</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Group/Subject</td>
+                                                            <td>
+                                                                <select style={{ width: '100%' }}>
+                                                                    <option value="0" >Select One</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Passing Year</td>
+                                                            <td>
+                                                                <select style={{ width: '100%' }}>
+                                                                    <option value="0" >Select One</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
                                                 </table>
                                             </td>
                                         </tr>
@@ -603,68 +611,68 @@ const ApplicationForm = () => {
 
                                             <td style={{ width: '100%' }}>
                                                 <table cellPadding="5" style={{ width: '100%', border: '1px solid #99C1D0' }}>
+                                                    <tbody>
 
-                                                    <tr>
-                                                        <td colSpan="5">Gratuation/Equivalent Level</td>
-                                                    </tr>
+                                                        <tr>
+                                                            <td colSpan="5">Gratuation/Equivalent Level</td>
+                                                        </tr>
 
-                                                    <tr>
-                                                        <td style={{ width: '23%' }}>Examination</td>
-                                                        <td style={{ width: '25%' }}>
-                                                            <select style={{ width: '100%' }}>
-                                                                <option value="0" >Select One</option>
-                                                                <option value="BSC" >B.Sc In Computer Science Engineering</option>
+                                                        <tr>
+                                                            <td style={{ width: '23%' }}>Examination</td>
+                                                            <td style={{ width: '25%' }}>
+                                                                <select style={{ width: '100%' }}>
+                                                                    <option value="0" >Select One</option>
+                                                                    <option value="BSC" >B.Sc In Computer Science Engineering</option>
 
-                                                            </select>
-                                                        </td>
-                                                        <td></td>
+                                                                </select>
+                                                            </td>
+                                                            <td></td>
 
-                                                        <td style={{ width: '23%' }}>Result</td>
-                                                        <td style={{ width: '25%' }}>
-                                                            <select style={{ width: '100%' }}>
-                                                                <option value="0" >Select One</option>
+                                                            <td style={{ width: '23%' }}>Result</td>
+                                                            <td style={{ width: '25%' }}>
+                                                                <select style={{ width: '100%' }}>
+                                                                    <option value="0" >Select One</option>
 
-                                                            </select>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style={{ width: '23%' }}>Subject/Degree</td>
-                                                        <td style={{ width: '25%' }}>
-                                                            <select style={{ width: '100%' }}>
-                                                                <option>Select One</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style={{ width: '23%' }}>Subject/Degree</td>
+                                                            <td style={{ width: '25%' }}>
+                                                                <select style={{ width: '100%' }}>
+                                                                    <option>Select One</option>
 
-                                                            </select>
-                                                        </td>
+                                                                </select>
+                                                            </td>
+                                                            <td></td>
+                                                            <td style={{ width: '23%' }}>Passing Year</td>
+                                                            <td style={{ width: '25%' }}>
+                                                                <select style={{ width: '100%' }}>
+                                                                    <option>Select One</option>
 
-                                                        <td></td>
-                                                        <td style={{ width: '23%' }}>Passing Year</td>
-                                                        <td style={{ width: '25%' }}>
-                                                            <select style={{ width: '100%' }}>
-                                                                <option>Select One</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>University/Institution</td>
+                                                            <td style={{ width: '25%' }}>
+                                                                <select style={{ width: '100%' }}>
+                                                                    <option>Select One</option>
 
-                                                            </select>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>University/Institution</td>
-                                                        <td style={{ width: '25%' }}>
-                                                            <select style={{ width: '100%' }}>
-                                                                <option>Select One</option>
+                                                                </select>
+                                                            </td>
 
-                                                            </select>
-                                                        </td>
+                                                            <td style={{ width: '2%' }}></td>
+                                                            <td>Course Duration</td>
+                                                            <td style={{ width: '25%' }}>
+                                                                <select style={{ width: '100%' }}>
+                                                                    <option>Select One</option>
+                                                                    <option>Web Development</option>
 
-                                                        <td style={{ width: '2%' }}></td>
-                                                        <td>Course Duration</td>
-                                                        <td style={{ width: '25%' }}>
-                                                            <select style={{ width: '100%' }}>
-                                                                <option>Select One</option>
-                                                                <option>Web Development</option>
-
-                                                            </select>
-                                                        </td>
-                                                    </tr>
-
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
                                                 </table>
                                             </td>
                                         </tr>
@@ -672,16 +680,15 @@ const ApplicationForm = () => {
                                         <tr>
                                             <td>
                                                 <table cellPadding="5">
-
-                                                    <tr style={{ backgroundColor: '#bfdfbf' }}>
-                                                        <td colSpan="5">Departmental Candidate Status
-                                                            <select style={{ marginLeft: '80px', width: '200px' }}>
-                                                                <option>Select One</option>
-                                                            </select>
-
-                                                        </td>
-
-                                                    </tr>
+                                                    <tbody>
+                                                        <tr style={{ backgroundColor: '#bfdfbf' }}>
+                                                            <td colSpan="5">Departmental Candidate Status
+                                                                <select style={{ marginLeft: '80px', width: '200px' }}>
+                                                                    <option>Select One</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
                                                 </table>
                                             </td>
                                         </tr>
@@ -696,35 +703,35 @@ const ApplicationForm = () => {
                                                             {/* SSC or Equivalent */}
                                                             <td style={{ width: '48%' }}>
                                                                 <table cellPadding="5" style={{ width: '100%', border: '1px solid #99C1D0' }}>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td colSpan="2">Upload Photo <small style={{ color: 'red' }}>*(300 x 300 Pixel JPG/PNG)</small></td>
+                                                                        </tr>
 
-                                                                    <tr>
-                                                                        <td colSpan="2">Upload Photo <small style={{ color: 'red' }}>*(300 x 300 Pixel JPG/PNG)</small></td>
-                                                                    </tr>
+                                                                        <tr>
 
-                                                                    <tr>
-
-                                                                        <td colSpan='2'>
-                                                                            <input type='file' />
-                                                                        </td>
-                                                                    </tr>
-
+                                                                            <td colSpan='2'>
+                                                                                <input type='file' />
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
                                                                 </table>
                                                             </td>
                                                             <td style={{ width: '2%', backgroundColor: '#dfdfdf' }}> </td>
                                                             {/* HSC or Equivalent */}
                                                             <td style={{ width: '48%' }}>
                                                                 <table cellPadding="5" style={{ width: '100%', border: '1px solid #99C1D0' }}>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td colSpan="2">Upload Signature <small style={{ color: 'red' }}>*(120 x 80 Pixel JPG/PNG)</small></td>
+                                                                        </tr>
 
-                                                                    <tr>
-                                                                        <td colSpan="2">Upload Signature <small style={{ color: 'red' }}>*(120 x 80 Pixel JPG/PNG)</small></td>
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <td colSpan='2'>
-                                                                            <input type='file' />
-                                                                        </td>
-
-                                                                    </tr>
+                                                                        <tr>
+                                                                            <td colSpan='2'>
+                                                                                <input type='file' />
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
                                                                 </table>
                                                             </td>
                                                         </tr>
@@ -736,7 +743,6 @@ const ApplicationForm = () => {
                                 </table>
                             </td>
                         </tr>
-
                     </tbody>
                 </table>
                 <input type="email" ref={emailRef} placeholder="Enter your email" /><br />
