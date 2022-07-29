@@ -1,86 +1,58 @@
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 import './ApplicationForm.css';
 
 const ApplicationForm = () => {
-    const postRef = useRef();
-    const nameRef = useRef();
-    const fnameRef = useRef();
-    const mnameRef = useRef();
-    const genderRef = useRef();
-    const dobDateRef = useRef();
-    const dobMonthRef = useRef();
-    const dobYearRef = useRef();
-    const nationalityRef = useRef();
-    const religionRef = useRef();
-    const nidRef = useRef();
-    const bregRef = useRef();
-    const maritalRef = useRef();
-    const quotaRef = useRef();
+    // var distObject = {
+    //     "Bhola": {
+    //         "Charfassion": ["Bhola Sadar", "Burhanuddin", "Lalmohon", "Charfassion"],
+    //         "Bhola Sadar": ["Borders", "Margins", "Backgrounds", "Float"],
+    //         "Burhanuddin": ["Variables", "Operators", "Functions", "Conditions"],
+    //         "Lalmohon": ["Variables", "Operators", "Functions", "Conditions"],
+    //         "Dowlotkhan": ["Variables", "Operators", "Functions", "Conditions"]
+    //     },
+    //     "Dhaka": {
+    //         "Mirpur": ["Variables", "Strings", "Arrays"],
+    //         "Mohammadpur": ["SELECT", "UPDATE", "DELETE"]
+    //     }
+    // }
 
-    const emailRef = useRef();
-    const courseRef = useRef();
-    // const birthDayRef = useRef();
-    // const uploadFile = useRef();
+    // window.onload = function () {
+    //     var districtSel = document.getElementById("district");
+    //     var upzillaSel = document.getElementById("upzilla");
+    //     // var upzillaSel = document.getElementById("upzilla");
+    //     for (var x in distObject) {
+    //         districtSel.options[districtSel.options.length] = new Option(x, x);
+    //     }
+    //     districtSel.onchange = function () {
+    //         //empty upzillas- and upzillas- dropdowns
+    //         // upzillaSel.length = 1;
+    //         upzillaSel.length = 1;
+    //         //display correct values
+    //         for (var y in distObject[this.value]) {
+    //             upzillaSel.options[upzillaSel.options.length] = new Option(y, y);
+    //         }
+    //     }
 
-    var distObject = {
-        "Bhola": {
-            "Charfassion": ["Bhola Sadar", "Burhanuddin", "Lalmohon", "Charfassion"],
-            "Bhola Sadar": ["Borders", "Margins", "Backgrounds", "Float"],
-            "Burhanuddin": ["Variables", "Operators", "Functions", "Conditions"],
-            "Lalmohon": ["Variables", "Operators", "Functions", "Conditions"],
-            "Dowlotkhan": ["Variables", "Operators", "Functions", "Conditions"]
-        },
-        "Dhaka": {
-            "Mirpur": ["Variables", "Strings", "Arrays"],
-            "Mohammadpur": ["SELECT", "UPDATE", "DELETE"]
-        }
-    }
-    window.onload = function () {
-        var districtSel = document.getElementById("district");
-        var upzillaSel = document.getElementById("upzilla");
-        // var upzillaSel = document.getElementById("upzilla");
-        for (var x in distObject) {
-            districtSel.options[districtSel.options.length] = new Option(x, x);
-        }
-        districtSel.onchange = function () {
-            //empty upzillas- and upzillas- dropdowns
-            // upzillaSel.length = 1;
-            upzillaSel.length = 1;
-            //display correct values
-            for (var y in distObject[this.value]) {
-                upzillaSel.options[upzillaSel.options.length] = new Option(y, y);
-            }
-        }
+    // } 
+    const [applicant, setApplicant] = useState({})
+    const handleOnblur = e => {
+        const field = e.target.name;
+        const value = e.target.value;
+        const newObj = { ...applicant }
+        console.log(newObj);
+        newObj[field] = value;
+        setApplicant(newObj);
 
     }
 
     const handleAddUser = e => {
-        const post = postRef.current.value;
-        const name = nameRef.current.value;
-        const fname = fnameRef.current.value;
-        const mname = mnameRef.current.value;
-        const gender = genderRef.current.value;
-        const dobDate = dobDateRef.current.value;
-        const dobMonth = dobMonthRef.current.value;
-        const dobYear = dobYearRef.current.value;
-        const nationality = nationalityRef.current.value;
-        const religion = religionRef.current.value;
-        const nid = nidRef.current.value;
-        const breg = bregRef.current.value;
-        const maritalStatus = maritalRef.current.value;
-        const quota = quotaRef.current.value;
-        const email = emailRef.current.value;
-        const course = courseRef.current.value;
-        // const birthday = birthDayRef.current.value;
-        // const upload = uploadFile.current.value;
 
-        const newUser = { post, name, fname, mname, gender, dobDate, dobMonth, dobYear, nationality, religion, nid, breg, maritalStatus, quota, email, course };
-        fetch('http://localhost:5000/userCollection', {
+        fetch('http://localhost:5000/applicantCollection', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
             },
-            body: JSON.stringify(newUser)
+            body: JSON.stringify(applicant)
         })
             .then(res => res.json())
             .then(data => {
@@ -88,19 +60,21 @@ const ApplicationForm = () => {
                     alert('Seccessfully Recorded')
                     e.target.reset();
                 }
+
             })
         e.preventDefault();
     }
     return (
         <div className='formWrapper'>
             <form onSubmit={handleAddUser}>
+
                 <table cellSpacing="0" cellPadding="5" >
                     <tbody>
                         <tr>
                             <td>Name of the Post</td>
                             <td>:</td>
                             <td>
-                                <select className='inputField' style={{ backgroundColor: '#bdbaba', width: '100%', outline: 'none' }} ref={postRef}>
+                                <select className='inputField' style={{ backgroundColor: '#bdbaba', width: '100%', outline: 'none' }} name="postName" id="postName" onBlur={handleOnblur}>
                                     <option value='select post'>Select a Post</option>
                                     <option value='Computer Operator'>Computer Operator</option>
                                     <option value='Steno Typist'>Steno Typist</option>
@@ -114,23 +88,23 @@ const ApplicationForm = () => {
                         <tr>
                             <td>Applicant's Name</td>
                             <td>:</td>
-                            <td><input className='inputField' type="text" ref={nameRef} placeholder=" " /></td>
+                            <td><input className='inputField' type="text" placeholder=" " name="applicantName" id="applicantName" onBlur={handleOnblur} /></td>
                         </tr>
                         <tr>
                             <td>Father's Name</td>
                             <td>:</td>
-                            <td><input className='inputField' type="text" placeholder=" " ref={fnameRef} /></td>
+                            <td><input className='inputField' type="text" placeholder=" " name="fname" id="fname" onBlur={handleOnblur} /></td>
                         </tr>
                         <tr>
                             <td>Mother's Name</td>
                             <td>:</td>
-                            <td><input className='inputField' type="text" placeholder=" " ref={mnameRef} /></td>
+                            <td><input className='inputField' type="text" placeholder=" " name="mname" id="mname" onBlur={handleOnblur} /></td>
                         </tr>
                         <tr>
                             <td>Gender</td>
                             <td>:</td>
                             <td>
-                                <select style={{ padding: '3px', width: '150px' }} ref={genderRef}>
+                                <select style={{ padding: '3px', width: '150px' }} name="gender" id="gender" onBlur={handleOnblur}>
                                     <option value='0'>Select Gender</option>
                                     <option value='Male'>Male</option>
                                     <option value='Female'>Female</option>
@@ -143,7 +117,7 @@ const ApplicationForm = () => {
                             <td>:</td>
                             <td>
                                 <label htmlFor='date'> Day </label>
-                                <select style={{ height: '25px', width: '120px', marginRight: '15px', textAlign: 'center' }} id='date' ref={dobDateRef}>
+                                <select style={{ height: '25px', width: '120px', marginRight: '15px', textAlign: 'center' }} id='date' name="b_day" onBlur={handleOnblur}>
                                     <option value="select" defaultValue={"select"}>Select</option>
                                     <option value="01">01</option>
                                     <option value="02">02</option>
@@ -178,7 +152,7 @@ const ApplicationForm = () => {
                                     <option value="31">31</option>
                                 </select>
                                 <label htmlFor='month'> Month </label>
-                                <select style={{ height: '25px', width: '120px', marginRight: '15px' }} name="month" id="month" ref={dobMonthRef}>
+                                <select style={{ height: '25px', width: '120px', marginRight: '15px' }} name="b_month" id="month" onBlur={handleOnblur}>
                                     <option value="select" defaultValue={"select"}>Select</option>
                                     <option value="January">01 - January</option>
                                     <option value="February">02 - February</option>
@@ -194,7 +168,7 @@ const ApplicationForm = () => {
                                     <option value="December">12 - December</option>
                                 </select>
                                 <label htmlFor="year"> Year </label>
-                                <select name="year" id="year" ref={dobYearRef} style={{ height: '25px', width: '120px', float: 'right' }}>
+                                <select name="b_year" id="year" style={{ height: '25px', width: '120px', float: 'right' }} onBlur={handleOnblur}>
                                     <option value="selected" defaultValue={"selected"}>Select</option>
                                     <option value="1976">1976</option>
                                     <option value="1977">1977</option>
@@ -232,12 +206,12 @@ const ApplicationForm = () => {
                             <td>Nationality</td>
                             <td>:</td>
                             <td>
-                                <select style={{ height: '25px', width: '120px', marginRight: '10px' }} ref={nationalityRef}>
+                                <select style={{ height: '25px', width: '120px', marginRight: '10px' }} name="nationality" id="nationality" onBlur={handleOnblur}>
                                     <option>Bangladeshi</option>
                                     <option>Foreiner</option>
                                 </select>
                                 <label htmlFor='religion' style={{ marginLeft: '200px' }}> Religion </label>
-                                <select id='religion' style={{ height: '25px', width: '120px', float: 'right' }}>
+                                <select id='religion' style={{ height: '25px', width: '120px', float: 'right' }} name="religion" onBlur={handleOnblur}>
                                     <option>Select Religion</option>
                                     <option value="Buddhism">Buddhism</option>
                                     <option value="Christianity">Christianity</option>
@@ -251,18 +225,18 @@ const ApplicationForm = () => {
                         <tr>
                             <td>National ID</td>
                             <td>:</td>
-                            <td><input className='inputField' type="number" placeholder=" " ref={nidRef} /></td>
+                            <td><input className='inputField' type="number" placeholder=" " name="NID" id="NID" onBlur={handleOnblur} /></td>
                         </tr>
                         <tr>
                             <td>Birth Registration No</td>
                             <td>:</td>
-                            <td><input className='inputField' type="number" placeholder=" " ref={bregRef} /></td>
+                            <td><input className='inputField' type="number" placeholder=" " name="b_reg" id="b_reg" onBlur={handleOnblur} /></td>
                         </tr>
                         <tr>
                             <td>Merital Status</td>
                             <td>:</td>
                             <td>
-                                <select style={{ padding: '3px', width: '150px' }} ref={maritalRef}>
+                                <select style={{ padding: '3px', width: '150px' }} name="m_status" id="m_status" onBlur={handleOnblur}>
                                     <option defaultValue='0'>Select Marital Status</option>
                                     <option value='Married'>Married</option>
                                     <option value='Single'>Single</option>
@@ -273,11 +247,11 @@ const ApplicationForm = () => {
                             <td>Quota</td>
                             <td>:</td>
                             <td>
-                                <select style={{ padding: '3px' }} ref={quotaRef}>
+                                <select style={{ padding: '3px' }} name="quota" id="quota" onBlur={handleOnblur}>
                                     <option defaultValue='0'>Select One</option>
                                     <option value="Freedom Fighter">Freedom Fighter</option>
                                     <option value="Child of Freedom Fighter">Child of Freedom Fighter</option>
-                                    <option value="3Grand Child of Freedom Fighter">Grand Child of Freedom Fighter</option>
+                                    <option value="Grand Child of Freedom Fighter">Grand Child of Freedom Fighter</option>
                                     <option value="Physically Handicapped">Physically Handicapped</option>
                                     <option value="Orphan">Orphan</option>
                                     <option value="Ethnic Minority">Ethnic Minority</option>
@@ -304,16 +278,16 @@ const ApplicationForm = () => {
                                                         </tr>
                                                         <tr>
                                                             <td>Care of</td>
-                                                            <td><input type="textarea" /></td>
+                                                            <td><input type="textarea" name="M_CareOf" id="M_CareOf" onBlur={handleOnblur} /></td>
                                                         </tr>
                                                         <tr>
                                                             <td>Village/Town/Road</td>
-                                                            <td><input type="textarea" /></td>
+                                                            <td><input type="textarea" name="M_Village" id="M_Village" onBlur={handleOnblur} /></td>
                                                         </tr>
                                                         <tr>
                                                             <td>District</td>
                                                             <td>
-                                                                <select style={{ width: '100%' }}>
+                                                                <select style={{ width: '100%' }} name="M_District" id="M_District" onBlur={handleOnblur}>
                                                                     <option value="0" >Select One</option>
                                                                     <option value="26">Bagerhat</option>
                                                                     <option value="64">Bandarban</option>
@@ -385,22 +359,22 @@ const ApplicationForm = () => {
                                                         <tr>
                                                             <td>Upzilla</td>
                                                             <td>
-                                                                <select style={{ width: '100%' }}>
-                                                                    <option>Select One</option>
-                                                                    <option>Charfassion</option>
-                                                                    <option>Bhola</option>
-                                                                    <option>Burhanuddin</option>
-                                                                    <option>Lalmohon</option>
+                                                                <select style={{ width: '100%' }} name="M_Upzilla" id="M_Upzilla" onBlur={handleOnblur}>
+                                                                    <option value="0">Select One</option>
+                                                                    <option value="Charfassion">Charfassion</option>
+                                                                    <option value="Bhola">Bhola</option>
+                                                                    <option value="Burhanuddin">Burhanuddin</option>
+                                                                    <option value="Lalmohon">Lalmohon</option>
                                                                 </select>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>Post Office</td>
-                                                            <td><input type="text" /></td>
+                                                            <td><input type="text" name="M_POffice" id="M_POffice" onBlur={handleOnblur} /></td>
                                                         </tr>
                                                         <tr>
                                                             <td>Post Code</td>
-                                                            <td><input type="number" /></td>
+                                                            <td><input type="number" name="M_PCode" id="M_PCode" onBlur={handleOnblur} /></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -415,17 +389,19 @@ const ApplicationForm = () => {
                                                         </tr>
                                                         <tr>
                                                             <td>Care of</td>
-                                                            <td><input type="text" /></td>
+                                                            <td><input type="text" name="P_CareOf" id="P_CareOf" onBlur={handleOnblur} /></td>
                                                         </tr>
                                                         <tr>
                                                             <td>Village/Town/Road</td>
-                                                            <td><input type="text" /></td>
+                                                            <td><input type="text" name="P_Village" id="P_Village" onBlur={handleOnblur} /></td>
                                                         </tr>
                                                         <tr>
                                                             <td>District</td>
                                                             <td>
-                                                                <select id='district' style={{ width: '100%' }}>
+                                                                <select style={{ width: '100%' }} name="P_District" id="P_District" onBlur={handleOnblur}>
                                                                     <option value="" >Select District</option>
+                                                                    <option value="bhola" >Bhola</option>
+                                                                    <option value="Dhaka" >Dhaka</option>
 
                                                                 </select>
                                                             </td>
@@ -433,19 +409,23 @@ const ApplicationForm = () => {
                                                         <tr>
                                                             <td>Upzilla</td>
                                                             <td>
-                                                                <select id='upzilla' style={{ width: '100%' }}>
-                                                                    <option value="" >Select Upzilla</option>
+                                                                <select style={{ width: '100%' }} name="P_Upzilla" id="P_Upzilla" onBlur={handleOnblur}>
+                                                                    <option value="0" >Select Upzilla</option>
+                                                                    <option value="Charfassion">Charfassion</option>
+                                                                    <option value="Bhola">Bhola</option>
+                                                                    <option value="Burhanuddin">Burhanuddin</option>
+                                                                    <option value="Lalmohon">Lalmohon</option>
 
                                                                 </select>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>Post Office</td>
-                                                            <td><input type="text" /></td>
+                                                            <td><input type="text" name="P_POffice" id="P_POffice" /></td>
                                                         </tr>
                                                         <tr>
                                                             <td>Post Code</td>
-                                                            <td><input type="number" /></td>
+                                                            <td><input type="number" name="P_PCode" id="P_PCode" /></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -459,17 +439,17 @@ const ApplicationForm = () => {
                         <tr>
                             <td>Mobile Number</td>
                             <td>:</td>
-                            <td><input type='number' /> <small style={{ color: 'red', lineHeight: '.5' }}> *plz mention a mobile number for getting info</small></td>
+                            <td><input type='number' name="p_number" id="p_number" onBlur={handleOnblur} /> <small style={{ color: 'red', lineHeight: '.5' }}> *plz mention a mobile number for getting info</small></td>
                         </tr>
                         <tr>
                             <td>Confirm Mobile</td>
                             <td>:</td>
-                            <td><input type='number' /> <small>plz retype mobile number</small></td>
+                            <td><input type='number' name="cp_number" id="cp_number" onBlur={handleOnblur} /> <small>plz retype mobile number</small></td>
                         </tr>
                         <tr>
                             <td>Email Address</td>
                             <td>:</td>
-                            <td><input type='email' className='inputField' /></td>
+                            <td><input type='email' className='inputField' name="email" id="email" onBlur={handleOnblur} /></td>
                         </tr>
                         {/* academic qualification  */}
                         <tr>
@@ -709,7 +689,6 @@ const ApplicationForm = () => {
                                                                         </tr>
 
                                                                         <tr>
-
                                                                             <td colSpan='2'>
                                                                                 <input type='file' />
                                                                             </td>
@@ -745,22 +724,6 @@ const ApplicationForm = () => {
                         </tr>
                     </tbody>
                 </table>
-                <input type="email" ref={emailRef} placeholder="Enter your email" /><br />
-                <input type="radio" ref={courseRef} id="html" name="fav_language" value="HTML" />
-                <label htmlFor="html">HTML</label>
-                <input type="radio" ref={courseRef} id="css" name="fav_language" value="CSS" />
-                <label htmlFor="css">CSS</label>
-                <input type="radio" ref={courseRef} id="javascript" name="fav_language" value="JavaScript" />
-                <label htmlFor="javascript">JavaScript</label> <br />
-
-                <label>Date of Birth </label>
-
-                <label htmlFor="month">Month</label>
-
-                <br />
-                <label htmlFor="birthday">Birthday:</label>
-                <input type="date" id="birthday" name="birthday" ></input><br />
-                <input type="file" />
 
                 <br /><br /><br />
                 <input type="submit" value="Submit" />

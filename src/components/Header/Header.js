@@ -12,7 +12,7 @@ const Header = () => {
     return (
         <div className="header">
             <div className='menuTable'>
-                <table border-cellSpacing="0" cellPadding="10">
+                <table border-cellspacing="0" cellPadding="10">
                     <tbody>
                         {/* <tr cellPadding='0' style={{ backgroundColor: '#dfdfdf' }}>
                             <td colSpan='3' cellPadding='0'></td>
@@ -27,7 +27,7 @@ const Header = () => {
                         </tr>
                     </tbody>
                 </table>
-                <table border='2' borderColor='#025c3b' cellPadding='4'>
+                <table border='2' bordercolor='#025c3b' cellPadding='4'>
                     <tbody>
                         <tr height="45" style={{ backgroundColor: 'rgb(1, 129, 83)' }}>
                             <td><Link to="/home" style={menuStyle}>Home</Link></td>
