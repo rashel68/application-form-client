@@ -46,7 +46,6 @@ const ApplicationForm = () => {
     }
 
     const handleAddUser = e => {
-
         fetch('http://localhost:5000/applicantCollection', {
             method: 'POST',
             headers: {
@@ -57,7 +56,7 @@ const ApplicationForm = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    alert('Seccessfully Recorded')
+                    alert('Application Seccessfully Submitted')
                     e.target.reset();
                 }
 

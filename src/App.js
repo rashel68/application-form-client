@@ -10,6 +10,7 @@ import AdmitCard from "./components/AdmitCard/AdmitCard";
 import PaymentStatus from "./components/PaymentStatus/PaymentStatus";
 import Instructions from "./components/Home/Instructions/Instructions";
 import Advertisement from "./components/Advertisement/Advertisement";
+import AdminRoute from "./components/AdminRoute/AdminRoute";
 
 
 function App() {
@@ -49,7 +50,9 @@ function App() {
             <Route path="/userCollection/update/:id">
               <UpdateUser></UpdateUser>
             </Route>
-
+            <Route path="/adminRoute">
+              <AdminRoute></AdminRoute>
+            </Route>
           </Switch>
         </div>
       </Router>

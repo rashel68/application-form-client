@@ -26,7 +26,7 @@ const Home = () => {
                     <Link to="/applicationForm" style={homeLinkStyle}>{pdfIcon} Application Form (Click here to apply online)</Link>
                 </fieldset>
             </div>
-            <footer style={{ backgroundColor: 'rgb(144, 238, 144)', padding: '5px 0px 6px', fontStyle: 'italic', fontWeight: ' bold' }}><small>For any inconvenience, please email send to example@gamail.com.bd</small></footer>
+            <footer style={{ backgroundColor: 'rgb(144, 238, 144)', padding: '5px 0px 6px', fontStyle: 'italic', fontWeight: ' bold' }}><small>For any inconvenience, please email send to example@gmail.com.bd</small></footer>
         </div>
     );
 };
