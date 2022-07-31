@@ -22,15 +22,15 @@ const AdminRoute = () => {
                         <td>ID</td>
                         <td>Name</td>
                         <td>Father's Name</td>
-                        <td>Mother's Name</td>
+                        <td>Post Name</td>
                     </tr>
                     {
                         applicants.map(applicant => <tr key={applicant._id}>
                             <td>{applicants.indexOf(applicant) + 1}</td>
-                            <td>{applicant._id}</td>
+                            <td>{applicant._id.slice(13)}</td>
                             <td>{applicant.applicantName}</td>
                             <td>{applicant.fname}</td>
-                            <td>{applicant.mname}</td>
+                            <td>{applicant.postName}</td>
                         </tr>)
                     }
                 </tbody>
