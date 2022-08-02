@@ -288,83 +288,79 @@ const ApplicationForm = () => {
                                                             <td>
                                                                 <select style={{ width: '100%' }} name="M_District" id="M_District" onBlur={handleOnblur}>
                                                                     <option value="0" >Select One</option>
-                                                                    <option value="26">Bagerhat</option>
-                                                                    <option value="64">Bandarban</option>
-                                                                    <option value="32">Barguna</option>
-                                                                    <option value="29">Barishal</option>
-                                                                    <option value="30">Bhola</option>
-                                                                    <option value="10">Bogura</option>
-                                                                    <option value="54">Brahmanbaria</option>
-                                                                    <option value="56">Chandpur</option>
-                                                                    <option value="13">Chapai Nawabganj</option>
-                                                                    <option value="60">Chattogram</option>
-                                                                    <option value="19">Chuadanga</option>
-                                                                    <option value="61">Cox`s Bazar</option>
-                                                                    <option value="55">Cumilla</option>
-                                                                    <option value="40">Dhaka</option>
-                                                                    <option value="03">Dinajpur</option>
-                                                                    <option value="45">Faridpur</option>
-                                                                    <option value="59">Feni</option>
-                                                                    <option value="08">Gaibandha</option>
-                                                                    <option value="41">Gazipur</option>
-                                                                    <option value="47">Gopalganj</option>
-                                                                    <option value="53">Habiganj</option>
-                                                                    <option value="09">Jaipurhat</option>
-                                                                    <option value="36">Jamalpur</option>
-                                                                    <option value="23">Jashore</option>
-                                                                    <option value="28">Jhalokhathi</option>
-                                                                    <option value="20">Jhenaidah</option>
-                                                                    <option value="62">Khagrachhari</option>
-                                                                    <option value="25">Khulna</option>
-                                                                    <option value="38">Kishorganj</option>
-                                                                    <option value="07">Kurigram</option>
-                                                                    <option value="17">Kushtia</option>
-                                                                    <option value="05">Lalmonirhat</option>
-                                                                    <option value="57">Luxmipur</option>
-                                                                    <option value="48">Madaripur</option>
-                                                                    <option value="21">Magura</option>
-                                                                    <option value="39">Manikganj</option>
-                                                                    <option value="18">Meharpur</option>
-                                                                    <option value="52">Mouluvibazar</option>
-                                                                    <option value="44">Munshiganj</option>
-                                                                    <option value="34">Mymensingh</option>
-                                                                    <option value="11">Naogaon</option>
-                                                                    <option value="22">Narail</option>
-                                                                    <option value="43">Narayanganj</option>
-                                                                    <option value="42">Narsingdi</option>
-                                                                    <option value="12">Natore</option>
-                                                                    <option value="33">Netrokona</option>
-                                                                    <option value="04">Nilphamari</option>
-                                                                    <option value="58">Noakhali</option>
-                                                                    <option value="16">Pabna</option>
-                                                                    <option value="01">Panchagarh</option>
-                                                                    <option value="31">Patuakhali</option>
-                                                                    <option value="27">Pirojpur</option>
-                                                                    <option value="46">Rajbari</option>
-                                                                    <option value="14">Rajshahi</option>
-                                                                    <option value="63">Rangamati</option>
-                                                                    <option value="06">Rangpur</option>
-                                                                    <option value="24">Satkhira</option>
-                                                                    <option value="49">Shariatpur</option>
-                                                                    <option value="35">Sherpur</option>
-                                                                    <option value="15">Sirajganj</option>
-                                                                    <option value="50">Sunamganj</option>
-                                                                    <option value="51">Sylhet</option>
-                                                                    <option value="37">Tangail</option>
-                                                                    <option value="02">Thakurgaon</option>
+                                                                    <option value="Bagerhat">Bagerhat</option>
+                                                                    <option value="Bandarban">Bandarban</option>
+                                                                    <option value="Barguna">Barguna</option>
+                                                                    <option value="Barishal">Barishal</option>
+                                                                    <option value="Bhola">Bhola</option>
+                                                                    <option value="Bogura">Bogura</option>
+                                                                    <option value="Brahmanbaria">Brahmanbaria</option>
+                                                                    <option value="Chandpur">Chandpur</option>
+                                                                    <option value="Chapai Nawabganj">Chapai Nawabganj</option>
+                                                                    <option value="Chattogram">Chattogram</option>
+                                                                    <option value="Chuadanga">Chuadanga</option>
+                                                                    <option value="Cox`s Bazar">Cox`s Bazar</option>
+                                                                    <option value="Cumilla">Cumilla</option>
+                                                                    <option value="Dhaka">Dhaka</option>
+                                                                    <option value="Dinajpur">Dinajpur</option>
+                                                                    <option value="Faridpur">Faridpur</option>
+                                                                    <option value="Feni">Feni</option>
+                                                                    <option value="Gaibandha">Gaibandha</option>
+                                                                    <option value="Gazipur">Gazipur</option>
+                                                                    <option value="Gopalganj">Gopalganj</option>
+                                                                    <option value="Habiganj">Habiganj</option>
+                                                                    <option value="Jaipurhat">Jaipurhat</option>
+                                                                    <option value="Jamalpur">Jamalpur</option>
+                                                                    <option value="Jashore">Jashore</option>
+                                                                    <option value="Jhalokhathi">Jhalokhathi</option>
+                                                                    <option value="Jhenaidah">Jhenaidah</option>
+                                                                    <option value="Khagrachhari">Khagrachhari</option>
+                                                                    <option value="Khulna">Khulna</option>
+                                                                    <option value="Kishorganj">Kishorganj</option>
+                                                                    <option value="Kurigram">Kurigram</option>
+                                                                    <option value="Kushtia">Kushtia</option>
+                                                                    <option value="Lalmonirhat">Lalmonirhat</option>
+                                                                    <option value="Luxmipur">Luxmipur</option>
+                                                                    <option value="Madaripur">Madaripur</option>
+                                                                    <option value="Magura">Magura</option>
+                                                                    <option value="Manikganj">Manikganj</option>
+                                                                    <option value="Meharpur">Meharpur</option>
+                                                                    <option value="Mouluvibazar">Mouluvibazar</option>
+                                                                    <option value="Munshiganj">Munshiganj</option>
+                                                                    <option value="Mymensingh">Mymensingh</option>
+                                                                    <option value="Naogaon">Naogaon</option>
+                                                                    <option value="Narail">Narail</option>
+                                                                    <option value="Narayanganj">Narayanganj</option>
+                                                                    <option value="Narsingdi">Narsingdi</option>
+                                                                    <option value="Natore">Natore</option>
+                                                                    <option value="Netrokona">Netrokona</option>
+                                                                    <option value="Nilphamari">Nilphamari</option>
+                                                                    <option value="Noakhali">Noakhali</option>
+                                                                    <option value="Pabna">Pabna</option>
+                                                                    <option value="Panchagarh">Panchagarh</option>
+                                                                    <option value="Patuakhali">Patuakhali</option>
+                                                                    <option value="Pirojpur">Pirojpur</option>
+                                                                    <option value="Rajbari">Rajbari</option>
+                                                                    <option value="Rajshahi">Rajshahi</option>
+                                                                    <option value="Rangamati">Rangamati</option>
+                                                                    <option value="Rangpur">Rangpur</option>
+                                                                    <option value="Satkhira">Satkhira</option>
+                                                                    <option value="Shariatpur">Shariatpur</option>
+                                                                    <option value="Sherpur">Sherpur</option>
+                                                                    <option value="Sirajganj">Sirajganj</option>
+                                                                    <option value="Sunamganj">Sunamganj</option>
+                                                                    <option value="Sylhet">Sylhet</option>
+                                                                    <option value="Tangail">Tangail</option>
+                                                                    <option value="Thakurgaon">Thakurgaon</option>
                                                                 </select>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>Upzilla</td>
                                                             <td>
-                                                                <select style={{ width: '100%' }} name="M_Upzilla" id="M_Upzilla" onBlur={handleOnblur}>
-                                                                    <option value="0">Select One</option>
-                                                                    <option value="Charfassion">Charfassion</option>
-                                                                    <option value="Bhola">Bhola</option>
-                                                                    <option value="Burhanuddin">Burhanuddin</option>
-                                                                    <option value="Lalmohon">Lalmohon</option>
-                                                                </select>
+                                                                <input type="text" name="M_Upzilla" id="M_Upzilla" onBlur={handleOnblur}>
+
+                                                                </input>
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -398,24 +394,79 @@ const ApplicationForm = () => {
                                                             <td>District</td>
                                                             <td>
                                                                 <select style={{ width: '100%' }} name="P_District" id="P_District" onBlur={handleOnblur}>
-                                                                    <option value="" >Select District</option>
-                                                                    <option value="bhola" >Bhola</option>
-                                                                    <option value="Dhaka" >Dhaka</option>
-
+                                                                    <option value="0" >Select One</option>
+                                                                    <option value="Bagerhat">Bagerhat</option>
+                                                                    <option value="Bandarban">Bandarban</option>
+                                                                    <option value="Barguna">Barguna</option>
+                                                                    <option value="Barishal">Barishal</option>
+                                                                    <option value="Bhola">Bhola</option>
+                                                                    <option value="Bogura">Bogura</option>
+                                                                    <option value="Brahmanbaria">Brahmanbaria</option>
+                                                                    <option value="Chandpur">Chandpur</option>
+                                                                    <option value="Chapai Nawabganj">Chapai Nawabganj</option>
+                                                                    <option value="Chattogram">Chattogram</option>
+                                                                    <option value="Chuadanga">Chuadanga</option>
+                                                                    <option value="Cox`s Bazar">Cox`s Bazar</option>
+                                                                    <option value="Cumilla">Cumilla</option>
+                                                                    <option value="Dhaka">Dhaka</option>
+                                                                    <option value="Dinajpur">Dinajpur</option>
+                                                                    <option value="Faridpur">Faridpur</option>
+                                                                    <option value="Feni">Feni</option>
+                                                                    <option value="Gaibandha">Gaibandha</option>
+                                                                    <option value="Gazipur">Gazipur</option>
+                                                                    <option value="Gopalganj">Gopalganj</option>
+                                                                    <option value="Habiganj">Habiganj</option>
+                                                                    <option value="Jaipurhat">Jaipurhat</option>
+                                                                    <option value="Jamalpur">Jamalpur</option>
+                                                                    <option value="Jashore">Jashore</option>
+                                                                    <option value="Jhalokhathi">Jhalokhathi</option>
+                                                                    <option value="Jhenaidah">Jhenaidah</option>
+                                                                    <option value="Khagrachhari">Khagrachhari</option>
+                                                                    <option value="Khulna">Khulna</option>
+                                                                    <option value="Kishorganj">Kishorganj</option>
+                                                                    <option value="Kurigram">Kurigram</option>
+                                                                    <option value="Kushtia">Kushtia</option>
+                                                                    <option value="Lalmonirhat">Lalmonirhat</option>
+                                                                    <option value="Luxmipur">Luxmipur</option>
+                                                                    <option value="Madaripur">Madaripur</option>
+                                                                    <option value="Magura">Magura</option>
+                                                                    <option value="Manikganj">Manikganj</option>
+                                                                    <option value="Meharpur">Meharpur</option>
+                                                                    <option value="Mouluvibazar">Mouluvibazar</option>
+                                                                    <option value="Munshiganj">Munshiganj</option>
+                                                                    <option value="Mymensingh">Mymensingh</option>
+                                                                    <option value="Naogaon">Naogaon</option>
+                                                                    <option value="Narail">Narail</option>
+                                                                    <option value="Narayanganj">Narayanganj</option>
+                                                                    <option value="Narsingdi">Narsingdi</option>
+                                                                    <option value="Natore">Natore</option>
+                                                                    <option value="Netrokona">Netrokona</option>
+                                                                    <option value="Nilphamari">Nilphamari</option>
+                                                                    <option value="Noakhali">Noakhali</option>
+                                                                    <option value="Pabna">Pabna</option>
+                                                                    <option value="Panchagarh">Panchagarh</option>
+                                                                    <option value="Patuakhali">Patuakhali</option>
+                                                                    <option value="Pirojpur">Pirojpur</option>
+                                                                    <option value="Rajbari">Rajbari</option>
+                                                                    <option value="Rajshahi">Rajshahi</option>
+                                                                    <option value="Rangamati">Rangamati</option>
+                                                                    <option value="Rangpur">Rangpur</option>
+                                                                    <option value="Satkhira">Satkhira</option>
+                                                                    <option value="Shariatpur">Shariatpur</option>
+                                                                    <option value="Sherpur">Sherpur</option>
+                                                                    <option value="Sirajganj">Sirajganj</option>
+                                                                    <option value="Sunamganj">Sunamganj</option>
+                                                                    <option value="Sylhet">Sylhet</option>
+                                                                    <option value="Tangail">Tangail</option>
+                                                                    <option value="Thakurgaon">Thakurgaon</option>
                                                                 </select>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>Upzilla</td>
                                                             <td>
-                                                                <select style={{ width: '100%' }} name="P_Upzilla" id="P_Upzilla" onBlur={handleOnblur}>
-                                                                    <option value="0" >Select Upzilla</option>
-                                                                    <option value="Charfassion">Charfassion</option>
-                                                                    <option value="Bhola">Bhola</option>
-                                                                    <option value="Burhanuddin">Burhanuddin</option>
-                                                                    <option value="Lalmohon">Lalmohon</option>
-
-                                                                </select>
+                                                                <input type="text" name="P_Upzilla" id="P_Upzilla" onBlur={handleOnblur}>
+                                                                </input>
                                                             </td>
                                                         </tr>
                                                         <tr>
