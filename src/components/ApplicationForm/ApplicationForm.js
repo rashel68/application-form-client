@@ -34,13 +34,43 @@ const ApplicationForm = () => {
     //     }
 
     // } 
+    // const autoFill = e => {
+    //     let chk = document.getElementById("p_chk");
+    //     let m_care = document.getElementById("M_CareOf");
+    //     let m_village = document.getElementById("M_Village").value;
+    //     let m_dist = document.getElementById("M_District").value;
+    //     let m_upzilla = document.getElementById("M_Upzilla").value;
+    //     let m_poffice = document.getElementById("M_POffice").value;
+    //     let m_pcode = document.getElementById("M_PCode").value;
+
+    //     let p_care = document.getElementById("p_CareOf");
+    //     let p_village = document.getElementById("p_Village").value;
+    //     let p_dist = document.getElementById("p_District").value;
+    //     let p_upzilla = document.getElementById("p_Upzilla").value;
+    //     let p_poffice = document.getElementById("p_POffice").value;
+    //     let p_pcode = document.getElementById("p_PCode").value;
+    //     if (chk.checked === true) {
+    //         let mcv = m_care.value;
+    //         p_care.value = mcv;
+
+    //     }
+    //     console.log(chk.checked);
+    //     console.log(m_care);
+    // }
     const [applicant, setApplicant] = useState({})
     const handleOnblur = e => {
+
+
+
+
         const field = e.target.name;
         const value = e.target.value;
         const newObj = { ...applicant }
-        console.log(newObj);
+        // console.log(newObj);
+        // let xx = newObj;
+        // console.log(xx);
         newObj[field] = value;
+
         setApplicant(newObj);
 
     }
@@ -380,7 +410,11 @@ const ApplicationForm = () => {
                                                     <tbody>
 
                                                         <tr>
-                                                            <td colSpan="2">Permanent Address</td>
+                                                            <td colSpan="2">
+                                                                Permanent Address
+                                                                <input type="checkbox" id="p_chk" name="p_chk" />
+                                                                <label htmlFor='p_chk'><small>same as present address</small></label>
+                                                            </td>
                                                         </tr>
                                                         <tr>
                                                             <td>Care of</td>
