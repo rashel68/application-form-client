@@ -1,22 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 const AdmitCard = () => {
-    const [registerInfo, setRegisterInfo] = useState({});
-    const handleOnblur = e => {
-        const field = e.target.name;
-        const value = e.target.value;
-        const newReg = { ...registerInfo }
-        console.log(newReg);
-        newReg[field] = value;
-        setRegisterInfo(newReg);
+    const { id } = useParams();
+    const [applicant, setApplicant] = useState({});
+    useEffect(() => {
+        fetch(`http://localhost:5000/applicantCollection/${id}`)
+            .then(res => res.json())
+            .then(data => setApplicant(data));
 
-    }
-    const handleRegister = (e) => {
-
-
-        e.preventDefault();
-    }
-
+    }, []);
+    // console.log(id);
+    // console.log(applicant.postName);
     const admitStyle = {
         backgroundColor: '#ddd',
         padding: '80px'
@@ -24,15 +19,10 @@ const AdmitCard = () => {
 
     return (
         <div style={admitStyle}>
-            <h4>Register</h4>
-            <form onSubmit={handleRegister}>
-                <input type="text" name="name" id="name" placeholder='name' onBlur={handleOnblur} /> <br />
-                <input type="number" name="number" id="number" placeholder='phone number' onBlur={handleOnblur} /> <br />
-                <input type="email" name="email" id="email" placeholder='email' onBlur={handleOnblur} /><br />
-                <input type="password" name="password" id="password" placeholder='password' onBlur={handleOnblur} /><br />
-                <input type="submit" value="submit" />
+            <p>{applicant.applicantName}</p>
+            <p>{applicant.postName}</p>
+            <h2>Application form submitted successfully</h2>
 
-            </form>
         </div>
     );
 };

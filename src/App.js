@@ -38,7 +38,7 @@ function App() {
             <Route path="/instruction">
               <Instructions></Instructions>
             </Route>
-            <Route path='/admitCard'>
+            <Route path='/admitCard/:id'>
               <AdmitCard></AdmitCard>
             </Route>
             <Route exact path="/users">

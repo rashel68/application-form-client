@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './ApplicationForm.css';
 
 const ApplicationForm = () => {
@@ -57,12 +58,10 @@ const ApplicationForm = () => {
     //     console.log(chk.checked);
     //     console.log(m_care);
     // }
-    const [applicant, setApplicant] = useState({})
+    const [applicant, setApplicant] = useState({});
+    let [id, setId] = useState('');
+
     const handleOnblur = e => {
-
-
-
-
         const field = e.target.name;
         const value = e.target.value;
         const newObj = { ...applicant }
@@ -74,6 +73,7 @@ const ApplicationForm = () => {
         setApplicant(newObj);
 
     }
+    console.log(id);
 
     const handleAddUser = e => {
         fetch('http://localhost:5000/applicantCollection', {
@@ -86,11 +86,12 @@ const ApplicationForm = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    alert('Application Seccessfully Submitted')
+                    alert(`${data.insertedId} Your Application Seccessfully Submitted`)
+                    setId(data.insertedId);
                     e.target.reset();
                 }
-
             })
+
         e.preventDefault();
     }
     return (
@@ -810,7 +811,10 @@ const ApplicationForm = () => {
                 </table>
 
                 <br /><br /><br />
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Submit" style={{ padding: '10px 20px', marginBottom: '20px' }} />
+
+                <Link to={`/admitCard/${id}`}>chk</Link>
+                <p>{id}</p>
 
             </form>
         </div>
