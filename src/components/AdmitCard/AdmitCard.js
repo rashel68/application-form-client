@@ -19,9 +19,54 @@ const AdmitCard = () => {
 
     return (
         <div style={admitStyle}>
-            <p>{applicant.applicantName}</p>
-            <p>{applicant.postName}</p>
-            <h2>Application form submitted successfully</h2>
+            <table style={{ margin: '0 auto', border: '1px solid #fff', borderCollapse: 'collapse', textAlign: 'left', width: '100%' }} border="1px solid" cellSpacing="0" cellPadding="4">
+                <tbody>
+                    <tr>
+                        <td>Post Name</td>
+                        <td>{applicant.postName}</td>
+                    </tr>
+                    <tr>
+                        <td>Applicant's Name </td>
+                        <td>{applicant.applicantName}</td>
+                    </tr>
+                    <tr>
+                        <td>Father's Name</td>
+                        <td>{applicant.fname}</td>
+                    </tr>
+                    <tr>
+                        <td>Mother's Name</td>
+                        <td>{applicant.mname}</td>
+                    </tr>
+                    <tr>
+                        <td>Date of Birth</td>
+                        <td>{applicant.b_day} / {applicant.b_month} / {applicant.b_year}</td>
+                    </tr>
+                    <tr>
+                        <td>Contact Mobile</td>
+                        <td>{applicant.p_number}</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>{applicant.email}</td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td>{applicant.gender}</td>
+                    </tr>
+                    <tr>
+                        <td>Religion</td>
+                        <td>{applicant.religion}</td>
+                    </tr>
+                    <tr>
+                        <td>Quota</td>
+                        <td>{applicant.quota}</td>
+                    </tr>
+                    <tr>
+                        <td>Home District</td>
+                        <td>{applicant.P_District}</td>
+                    </tr>
+                </tbody>
+            </table>
 
         </div>
     );

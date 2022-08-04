@@ -73,7 +73,7 @@ const ApplicationForm = () => {
         setApplicant(newObj);
 
     }
-    console.log(id);
+    // console.log(id);
 
     const handleAddUser = e => {
         fetch('http://localhost:5000/applicantCollection', {
