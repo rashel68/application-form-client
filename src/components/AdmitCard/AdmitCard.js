@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { QRCodeSVG } from 'qrcode.react';
 
 const AdmitCard = () => {
     const { id } = useParams();
@@ -19,6 +20,29 @@ const AdmitCard = () => {
 
     return (
         <div style={admitStyle}>
+            <table style={{ margin: '0 auto', borderCollapse: 'collapse', textAlign: 'left', width: '100%' }} cellSpacing="0" cellPadding="4">
+                <tbody>
+                    <tr>
+                        <td colSpan="4" style={{ textAlign: 'center', fontSize: '20px', fontWeight: 'bold' }}>Applicant Copy</td>
+                    </tr>
+                    <tr>
+                        <td colSpan="3">...........Applicant Photo................</td>
+
+                        <td style={{ textAlign: 'right' }}>{
+                            <QRCodeSVG
+                                value={"ID: " + applicant._id + ", Name: "
+                                    + applicant.applicantName + ", Post: " + applicant.postName}
+                                size={80}
+                                bgColor={"#ffffff"}
+                                fgColor={"#000000"}
+                                includeMargin={false}
+
+                            />
+                        }
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
             <table style={{ margin: '0 auto', border: '1px solid #fff', borderCollapse: 'collapse', textAlign: 'left', width: '100%' }} border="1px solid" cellSpacing="0" cellPadding="4">
                 <tbody>
                     <tr>

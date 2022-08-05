@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { QRCodeSVG } from 'qrcode.react';
+
+import { Link } from 'react-router-dom';
 
 const AdminRoute = () => {
     const [applicants, setApplicants] = useState([]);
@@ -24,26 +25,14 @@ const AdminRoute = () => {
                         <td>Name</td>
                         <td>Father's Name</td>
                         <td>Post Name</td>
-                        <td>QR</td>
                     </tr>
                     {
                         applicants.map(applicant => <tr key={applicant._id}>
                             <td>{applicants.indexOf(applicant) + 1}</td>
-                            <td>{applicant._id.slice(13)}</td>
+                            <td><Link to={`/admitCard/${applicant._id}`}>{applicant._id.slice(13)}</Link></td>
                             <td>{applicant.applicantName}</td>
                             <td>{applicant.fname}</td>
                             <td>{applicant.postName}</td>
-                            <td>{
-                                <QRCodeSVG
-                                    value={"ID: " + applicant._id + ", Name: "
-                                        + applicant.applicantName + ", Post: " + applicant.postName}
-                                    size={30}
-                                    bgColor={"#ffffff"}
-                                    fgColor={"#000000"}
-                                    includeMargin={false}
-
-                                />
-                            }</td>
                         </tr>)
                     }
                 </tbody>
