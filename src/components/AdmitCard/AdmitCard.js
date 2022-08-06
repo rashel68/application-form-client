@@ -100,7 +100,7 @@ const AdmitCard = () => {
                 <tbody>
                     <tr>
                         <td style={{ width: '50%' }}><b>Present Address</b></td>
-                        <td><b>Permanent Addres</b></td>
+                        <td><b>Permanent Address</b></td>
                     </tr>
                     <tr>
                         <td>
@@ -119,6 +119,31 @@ const AdmitCard = () => {
                             Upzilla: {applicant.P_Upzilla} <br />
                             District: {applicant.P_District}
                         </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table style={{ marginTop: '10px', border: '1px solid #fff', borderCollapse: 'collapse', textAlign: 'left', fontSize: '12px', width: '100%', }} border="1px solid" cellSpacing="0" cellPadding="2">
+                <tbody>
+                    <tr>
+                        <td colSpan="7" style={{ textAlign: 'center', backgroundColor: '#7ae77a' }}><b>Academic Qualification</b></td>
+                    </tr>
+                    <tr>
+                        <td><b>Examination</b></td>
+                        <td><b>Board/Institution</b></td>
+                        <td><b>Group/Subject/Degree</b></td>
+                        <td><b>Result</b></td>
+                        <td><b>Year</b></td>
+                        <td><b>Roll</b></td>
+                        <td><b>Duration</b></td>
+                    </tr>
+                    <tr>
+                        <td>SSC</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                 </tbody>
             </table>
