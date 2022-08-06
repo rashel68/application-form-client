@@ -10,7 +10,7 @@ const AdmitCard = () => {
             .then(res => res.json())
             .then(data => setApplicant(data));
 
-    }, []);
+    }, [id]);
     // console.log(id);
     // console.log(applicant.postName);
     const admitStyle = {
@@ -23,31 +23,28 @@ const AdmitCard = () => {
             <table style={{ margin: '0 auto', borderCollapse: 'collapse', textAlign: 'left', width: '100%' }} cellSpacing="0" cellPadding="4">
                 <tbody>
                     <tr>
-                        <td colSpan="4" style={{ textAlign: 'center', fontSize: '20px', fontWeight: 'bold' }}>Applicant Copy</td>
+                        <td colSpan="4" style={{ textAlign: 'center', fontSize: '20px', fontWeight: 'bold', textDecoration: 'underline', paddingBottom: '20px' }}>Applicant Copy</td>
                     </tr>
-                    <tr>
-                        <td colSpan="3">...........Applicant Photo................</td>
 
-                        <td style={{ textAlign: 'right' }}>{
-                            <QRCodeSVG
-                                value={"ID: " + applicant._id + ", Name: "
-                                    + applicant.applicantName + ", Post: " + applicant.postName}
-                                size={80}
-                                bgColor={"#ffffff"}
-                                fgColor={"#000000"}
-                                includeMargin={false}
-
-                            />
-                        }
-                        </td>
-                    </tr>
                 </tbody>
             </table>
-            <table style={{ margin: '0 auto', border: '1px solid #fff', borderCollapse: 'collapse', textAlign: 'left', width: '100%' }} border="1px solid" cellSpacing="0" cellPadding="4">
+            <table style={{ margin: '0 auto', border: '1px solid #fff', borderCollapse: 'collapse', textAlign: 'left', fontSize: '12px', width: '100%', }} border="1px solid" cellSpacing="0" cellPadding="2">
                 <tbody>
                     <tr>
                         <td>Post Name</td>
                         <td>{applicant.postName}</td>
+                        <td rowSpan="5" style={{ textAlign: 'center', width: '100px' }}>
+                            {
+                                <QRCodeSVG
+                                    value={"ID: " + applicant._id + ", Name: "
+                                        + applicant.applicantName + ", Post: " + applicant.postName}
+                                    size={80}
+                                    bgColor={"#ffffff"}
+                                    fgColor={"#000000"}
+                                    includeMargin={false}
+                                />
+                            }
+                        </td>
                     </tr>
                     <tr>
                         <td>Applicant's Name </td>
@@ -78,6 +75,14 @@ const AdmitCard = () => {
                         <td>{applicant.gender}</td>
                     </tr>
                     <tr>
+                        <td>Marital Status</td>
+                        <td>{applicant.m_status}</td>
+                    </tr>
+                    <tr>
+                        <td>Nationality / NID</td>
+                        <td>{applicant.nationality + " / " + applicant.NID}</td>
+                    </tr>
+                    <tr>
                         <td>Religion</td>
                         <td>{applicant.religion}</td>
                     </tr>
@@ -88,6 +93,32 @@ const AdmitCard = () => {
                     <tr>
                         <td>Home District</td>
                         <td>{applicant.P_District}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table style={{ marginTop: '10px', border: '1px solid #fff', borderCollapse: 'collapse', textAlign: 'left', fontSize: '12px', width: '100%', }} border="1px solid" cellSpacing="0" cellPadding="2">
+                <tbody>
+                    <tr>
+                        <td style={{ width: '50%' }}><b>Present Address</b></td>
+                        <td><b>Permanent Addres</b></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Care Of: {applicant.M_CareOf} <br />
+                            Village/Town: {applicant.M_Village} <br />
+                            Post Office: {applicant.M_POffice} <br />
+                            Post Code: {applicant.M_PCode}<br />
+                            Upzilla: {applicant.M_Upzilla} <br />
+                            District: {applicant.M_District}
+                        </td>
+                        <td>
+                            Care Of: {applicant.P_CareOf} <br />
+                            Village/Town: {applicant.P_Village} <br />
+                            Post Office: {applicant.P_POffice} <br />
+                            Post Code: {applicant.P_PCode}<br />
+                            Upzilla: {applicant.P_Upzilla} <br />
+                            District: {applicant.P_District}
+                        </td>
                     </tr>
                 </tbody>
             </table>
