@@ -554,49 +554,168 @@ const ApplicationForm = () => {
                                                         <tr>
                                                             <td>Examination</td>
                                                             <td>
-                                                                <select style={{ width: '100%' }}>
+                                                                <select style={{ width: '100%' }} name="exam1" id="exam1" onBlur={handleOnblur}>
                                                                     <option value="0" >Select One</option>
-
+                                                                    <option value="1">S.S.C</option>
+                                                                    <option value="2">Dakhil</option>
+                                                                    <option value="3">S.S.C Vocational</option>
+                                                                    <option value="4">O Level/Cambridge</option>
+                                                                    <option value="5">S.S.C Equivalent</option>
+                                                                    <option value="6">Dakhil Vocational</option>
                                                                 </select>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>Board</td>
                                                             <td>
-                                                                <select style={{ width: '100%' }}>
-                                                                    <option>Select One</option>
-
+                                                                <select style={{ width: '100%' }} name="board1" id="board1" onBlur={handleOnblur}>
+                                                                    <option value="0">Select One</option>
+                                                                    <option value="1">Dhaka</option>
+                                                                    <option value="2">Cumilla</option>
+                                                                    <option value="3">Rajshahi</option>
+                                                                    <option value="4">Jashore</option>
+                                                                    <option value="5">Chittagong</option>
+                                                                    <option value="6">Barishal</option>
+                                                                    <option value="7">Sylhet</option>
+                                                                    <option value="8">Dinajpur</option>
+                                                                    <option value="9">Madrasah</option>
+                                                                    <option value="10">Open University</option>
+                                                                    <option value="11">Mymensingh</option>
+                                                                    <option value="12">The State Medical Faculty of Bangladesh</option>
+                                                                    <option value="14">Pharmacy Council of Bangladesh</option>
+                                                                    <option value="15">Cambridge International - IGCE</option>
+                                                                    <option value="16">Edexcel International</option>
+                                                                    <option value="17">Bangladesh Technical Education Board (BTEB)</option>
+                                                                    <option value="20">Others</option>
                                                                 </select>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>Roll No</td>
-                                                            <td><input type="text" /></td>
+                                                            <td><input type="text" name="roll1" id="roll1" onBlur={handleOnblur} /></td>
                                                         </tr>
                                                         <tr>
                                                             <td>Result</td>
                                                             <td>
-                                                                <select style={{ width: '100%' }}>
+                                                                <select style={{ width: '100%' }} name="result1" id="result1" onBlur={handleOnblur}>
                                                                     <option value="0" >Select One</option>
-
+                                                                    <option value="1">1st Division</option>
+                                                                    <option value="2">2nd Division</option>
+                                                                    <option value="3">3rd Division</option>
+                                                                    <option value="4">GPA(out of 4)</option>
+                                                                    <option value="5">GPA(out of 5)</option>
                                                                 </select>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>Group/Subject</td>
                                                             <td>
-                                                                <select style={{ width: '100%' }}>
-                                                                    <option value="0" >Select One</option>
-
+                                                                <select style={{ width: '100%' }} name="subject1" id="subject1" onBlur={handleOnblur}>
+                                                                    <option value="0">Select One</option>
+                                                                    <option value="1">Science</option>
+                                                                    <option value="2">Humanities</option>
+                                                                    <option value="3">Business Studies</option>
+                                                                    <option value="12">Agriculture Technology</option>
+                                                                    <option value="13">Architecture and Interior Design Technology</option>
+                                                                    <option value="15">Automobile Technology</option>
+                                                                    <option value="16">Civil Technology</option>
+                                                                    <option value="20">Computer Science & Technology</option>
+                                                                    <option value="21">Chemical Technology</option>
+                                                                    <option value="22">Electrical Technology</option>
+                                                                    <option value="23">Data Telecommunication and Network Technology</option>
+                                                                    <option value="24">Electrical and Electronics Technology</option>
+                                                                    <option value="27">Environmental Technology</option>
+                                                                    <option value="31">Instrumentation & Process Control Technology</option>
+                                                                    <option value="32">Mechanical Technology</option>
+                                                                    <option value="34">Mechatronics Technology</option>
+                                                                    <option value="36">Power Technology</option>
+                                                                    <option value="38">Refregeration & Air Conditioning Technology</option>
+                                                                    <option value="41">Telecommunication Technology</option>
+                                                                    <option value="42">Electronics Technology</option>
+                                                                    <option value="43">Library Science</option>
+                                                                    <option value="44">Survey</option>
+                                                                    <option value="45">General Mechanics</option>
+                                                                    <option value="46">Firm Machinery</option>
+                                                                    <option value="47">Textile Technology</option>
+                                                                    <option value="51">Agro-Based Food</option>
+                                                                    <option value="52">General Electronics</option>
+                                                                    <option value="53">Automotive</option>
+                                                                    <option value="54">Building Maintenance</option>
+                                                                    <option value="55">Wood Working</option>
+                                                                    <option value="56">Ceramic</option>
+                                                                    <option value="57">Civil Construction</option>
+                                                                    <option value="58">Computer and Information Technology</option>
+                                                                    <option value="59">Civil Drafting with CAD</option>
+                                                                    <option value="60">Mechanical Drafting with CAD</option>
+                                                                    <option value="61">Dress Making</option>
+                                                                    <option value="62">Dyeing, Printing and Finishing</option>
+                                                                    <option value="63">Electrical Maintenance Works</option>
+                                                                    <option value="64">Farm Machinery</option>
+                                                                    <option value="65">Fish Culture and Breeding</option>
+                                                                    <option value="66">Food Processing and Preservation</option>
+                                                                    <option value="67">General Mechanics</option>
+                                                                    <option value="68">Livestock Rearing and Farming</option>
+                                                                    <option value="69">Machine Tools Operation</option>
+                                                                    <option value="70">Poultry Rearing and Farming</option>
+                                                                    <option value="71">Patient Care</option>
+                                                                    <option value="72">General Electrical Works</option>
+                                                                    <option value="73">Plumbing and Pipe Fittings</option>
+                                                                    <option value="74">Refrigeration and Air Conditioning</option>
+                                                                    <option value="75">Glass</option>
+                                                                    <option value="76">Flower, Fruit and Vegetable Cultivation</option>
+                                                                    <option value="77">Weaving</option>
+                                                                    <option value="78">Welding and Fabrication</option>
+                                                                    <option value="79">Architectural Drafting with CAD</option>
+                                                                    <option value="80">Knitting</option>
+                                                                    <option value="81">Shrimp Culture and Breeding</option>
+                                                                    <option value="99">Others</option>
                                                                 </select>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>Passing Year</td>
                                                             <td>
-                                                                <select style={{ width: '100%' }}>
+                                                                <select style={{ width: '100%' }} name="year1" id="year1" onBlur={handleOnblur}>
                                                                     <option value="0" >Select One</option>
-
+                                                                    <option value="1984">1984</option>
+                                                                    <option value="1985">1985</option>
+                                                                    <option value="1986">1986</option>
+                                                                    <option value="1987">1987</option>
+                                                                    <option value="1988">1988</option>
+                                                                    <option value="1989">1989</option>
+                                                                    <option value="1990">1990</option>
+                                                                    <option value="1991">1991</option>
+                                                                    <option value="1992">1992</option>
+                                                                    <option value="1993">1993</option>
+                                                                    <option value="1994">1994</option>
+                                                                    <option value="1995">1995</option>
+                                                                    <option value="1996">1996</option>
+                                                                    <option value="1997">1997</option>
+                                                                    <option value="1998">1998</option>
+                                                                    <option value="1999">1999</option>
+                                                                    <option value="2000">2000</option>
+                                                                    <option value="2001">2001</option>
+                                                                    <option value="2002">2002</option>
+                                                                    <option value="2003">2003</option>
+                                                                    <option value="2004">2004</option>
+                                                                    <option value="2005">2005</option>
+                                                                    <option value="2006">2006</option>
+                                                                    <option value="2007">2007</option>
+                                                                    <option value="2008">2008</option>
+                                                                    <option value="2009">2009</option>
+                                                                    <option value="2010">2010</option>
+                                                                    <option value="2011">2011</option>
+                                                                    <option value="2012">2012</option>
+                                                                    <option value="2013">2013</option>
+                                                                    <option value="2014">2014</option>
+                                                                    <option value="2015">2015</option>
+                                                                    <option value="2016">2016</option>
+                                                                    <option value="2017">2017</option>
+                                                                    <option value="2018">2018</option>
+                                                                    <option value="2019">2019</option>
+                                                                    <option value="2020">2020</option>
+                                                                    <option value="2021">2021</option>
+                                                                    <option value="2022">2022</option>
                                                                 </select>
                                                             </td>
                                                         </tr>

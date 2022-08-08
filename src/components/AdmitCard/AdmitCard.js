@@ -137,12 +137,12 @@ const AdmitCard = () => {
                         <td><b>Duration</b></td>
                     </tr>
                     <tr>
-                        <td>SSC</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{applicant.exam1}</td>
+                        <td>{applicant.board1}</td>
+                        <td>{applicant.subject1}</td>
+                        <td>{applicant.result1}</td>
+                        <td>{applicant.year1}</td>
+                        <td>{applicant.roll1}</td>
                         <td></td>
                     </tr>
                 </tbody>
