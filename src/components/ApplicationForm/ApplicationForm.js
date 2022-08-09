@@ -11,8 +11,28 @@ const ApplicationForm = () => {
     const [upzilla, setUpzilla] = useState();
     const [exam1, setExam1] = useState([]);
     const [exam2, setExam2] = useState([]);
+    const [fill, setFill] = useState([]);
+    const [care, setCare] = useState([]);
+    const [village, setVillage] = useState([]);
+    const [mupzilla, setMupzilla] = useState([]);
 
-    // console.log(exam1);
+    // console.log(mupzilla);
+
+
+    let permanent = document.getElementById('P_CareOf');
+    let permanentVillage = document.getElementById('P_Village');
+    let permanentDist = document.getElementById('P_District');
+    let permanentUpzilla = document.getElementById('permanent_upzilla');
+    // console.log(presentValue);
+    if (fill === 'cheked') {
+        permanent.value = care;
+        permanentVillage.value = village;
+        permanentDist.value = dist;
+        // permanentUpzilla.value = mupzilla;
+        console.log(mupzilla);
+        // setDist2(dist);
+        // console.log(care);
+    }
 
     let m_dist = [];
     let p_dist = [];
@@ -350,11 +370,11 @@ const ApplicationForm = () => {
                                                         </tr>
                                                         <tr>
                                                             <td>Care of</td>
-                                                            <td><input type="textarea" name="M_CareOf" id="M_CareOf" onBlur={handleOnblur} /></td>
+                                                            <td><input type="textarea" name="M_CareOf" id="M_CareOf" onBlur={handleOnblur} onChange={e => setCare(e.target.value)} /></td>
                                                         </tr>
                                                         <tr>
                                                             <td>Village/Town/Road</td>
-                                                            <td><input type="textarea" name="M_Village" id="M_Village" onBlur={handleOnblur} /></td>
+                                                            <td><input type="textarea" name="M_Village" id="M_Village" onBlur={handleOnblur} onChange={e => setVillage(e.target.value)} /></td>
                                                         </tr>
                                                         <tr>
                                                             <td>District</td>
@@ -370,7 +390,7 @@ const ApplicationForm = () => {
                                                         <tr>
                                                             <td>Upzilla</td>
                                                             <td>
-                                                                <select style={{ width: '100%' }} name="M_Upzilla" id="M_Upzilla" onBlur={handleOnblur}>
+                                                                <select style={{ width: '100%' }} name="M_Upzilla" id="M_Upzilla" onBlur={handleOnblur} onChange={e => setMupzilla(e.target.value)}>
                                                                     <option value="0">Select Upzilla</option>
                                                                     {
                                                                         m_upzilla.map(u => <option key={u} value={u}>{u}</option>)
@@ -397,7 +417,7 @@ const ApplicationForm = () => {
                                                         <tr>
                                                             <td colSpan="2">
                                                                 Permanent Address
-                                                                <input type="checkbox" id="p_chk" name="p_chk" />
+                                                                <input type="checkbox" id="p_chk" name="p_chk" value="cheked" onChange={e => setFill(e.target.value)} />
                                                                 <label htmlFor='p_chk'><small>same as present address</small></label>
                                                             </td>
                                                         </tr>
@@ -423,7 +443,7 @@ const ApplicationForm = () => {
                                                         <tr>
                                                             <td>Upzilla</td>
                                                             <td>
-                                                                <select style={{ width: '100%' }} name="P_Upzilla" id="P_Upzilla" onBlur={handleOnblur}>
+                                                                <select style={{ width: '100%' }} name="P_Upzilla" id="permanent_upzilla" onBlur={handleOnblur}>
                                                                     <option value="0">Select Upzilla</option>
                                                                     {
                                                                         p_upzilla.map(u => <option key={u} value={u}>{u}</option>)
@@ -590,7 +610,7 @@ const ApplicationForm = () => {
                                                         <tr>
                                                             <td>Result</td>
                                                             <td>
-                                                                <select style={{ width: '100%' }} name="hsc_result" id="hsc_result">
+                                                                <select style={{ width: '100%' }} name="hsc_result" id="hsc_result" onBlur={handleOnblur} >
                                                                     <option value="0" >Select One</option>
                                                                     <option value="1">1st Division</option>
                                                                     <option value="2">2nd Division</option>

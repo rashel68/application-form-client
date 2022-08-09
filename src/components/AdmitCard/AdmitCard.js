@@ -150,7 +150,7 @@ const AdmitCard = () => {
                         <td>{applicant.hsc_board}</td>
                         <td>{applicant.hsc_subject}</td>
                         <td>{applicant.hsc_result}</td>
-                        <td>{applicant.hsc_year}</td>
+                        <td>{applicant.hsc_pass}</td>
                         <td>{applicant.hsc_roll}</td>
                         <td>N/A</td>
                     </tr>
