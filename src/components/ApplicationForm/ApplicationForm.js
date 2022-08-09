@@ -9,6 +9,8 @@ const ApplicationForm = () => {
     const [dist, setDist] = useState([]);
     const [dist2, setDist2] = useState([]);
     const [upzilla, setUpzilla] = useState();
+    const [exam1, setExam1] = useState([]);
+    // console.log(exam1);
 
     let m_dist = [];
     let p_dist = [];
@@ -16,7 +18,34 @@ const ApplicationForm = () => {
     let p_upzilla = [];
     let union;
     let union1 = [];
-    // let union1 = [];
+
+    let ssc_board = ['Dhaka', 'Mymensingh', 'Cumilla', 'Rajshahi', 'Jashore', 'Chittagong', 'Barishal', 'Sylhet', 'Dinajpur', 'Madrasah', 'Open University', 'The State Medical Faculty of Bangladesh', 'Pharmacy Council of Bangladesh', 'Cambridge International - IGCE', 'Edexcel International', 'Bangladesh Technical Education Board (BTEB)', 'Others'];
+
+    let ssc_sub = {
+        SSC: ['Science', 'Humanities', 'Business Studies', 'Others'],
+        Dakhil: ['Science', 'Humanities', 'Business Studies', 'Others'],
+        SSC_Vocational: ['Agriculture Technology', 'Architecture and Interior Design Technology', 'Automobile Technology', 'Civil Technology', 'Computer Science & Technology',
+            'Chemical Technology', 'Electrical Technology', 'Data Telecommunication and Network Technology', 'Electrical and Electronics Technology', 'Environmental Technology', 'Instrumentation & Process Control Technology', 'Mechanical Technology', 'Mechatronics Technology', 'Power Technology', 'Refregeration & Air Conditioning Technology', 'Telecommunication Technology', 'Electronics Technology', 'Library Science', 'Survey',
+            'General Mechanics', 'Firm Machinery', 'Textile Technology', 'Agro-Based Food', 'General Electronics', 'Automotive', 'Building Maintenance', 'Wood Working', 'Ceramic', 'Civil Construction', 'Computer and Information Technology', 'Civil Drafting with CAD', 'Mechanical Drafting with CAD', 'Dress Making', 'Dyeing, Printing and Finishing', 'Electrical Maintenance Works', 'Farm Machinery', 'Fish Culture and Breeding', 'Food Processing and Preservation', ' Livestock Rearing and Farming', 'Machine Tools Operation', 'Poultry Rearing and Farming', 'Patient Care', 'General Electrical Works', 'Plumbing and Pipe Fittings', 'Refrigeration and Air Conditioning', 'Glass', 'Flower, Fruit and Vegetable Cultivation', 'Weaving', 'Welding and Fabrication', 'Architectural Drafting with CAD', 'Knitting', 'Shrimp Culture and Breeding', 'Others']
+    }
+
+    if (exam1 === "Dakhil_Vocational") {
+        setExam1("SSC_Vocational");
+    }
+    if (exam1 === "SSC_Equivalent") {
+        setExam1("SSC_Vocational");
+    }
+    if (exam1 === "O_Level") {
+        setExam1("SSC_Vocational");
+    }
+
+    let ssc = ssc_sub[exam1];
+    let ssc1 = [];
+    for (let n in ssc_sub[exam1]) {
+        ssc1.push(ssc[n]);
+
+    }
+
     useEffect(() => {
         fetch('./dist.json')
             .then(res => res.json())
@@ -421,14 +450,14 @@ const ApplicationForm = () => {
                                                         <tr>
                                                             <td>Examination</td>
                                                             <td>
-                                                                <select style={{ width: '100%' }} name="exam1" id="exam1" onBlur={handleOnblur}>
+                                                                <select style={{ width: '100%' }} name="exam1" id="exam1" onBlur={handleOnblur} onChange={e => setExam1(e.target.value)}>
                                                                     <option value="0" >Select One</option>
-                                                                    <option value="1">S.S.C</option>
-                                                                    <option value="2">Dakhil</option>
-                                                                    <option value="3">S.S.C Vocational</option>
-                                                                    <option value="4">O Level/Cambridge</option>
-                                                                    <option value="5">S.S.C Equivalent</option>
-                                                                    <option value="6">Dakhil Vocational</option>
+                                                                    <option value="SSC">S.S.C</option>
+                                                                    <option value="Dakhil">Dakhil</option>
+                                                                    <option value="SSC_Vocational">S.S.C Vocational</option>
+                                                                    <option value="O_Level">O Level/Cambridge</option>
+                                                                    <option value="SSC_Equivalent">S.S.C Equivalent</option>
+                                                                    <option value="Dakhil_Vocational">Dakhil Vocational</option>
                                                                 </select>
                                                             </td>
                                                         </tr>
@@ -437,23 +466,9 @@ const ApplicationForm = () => {
                                                             <td>
                                                                 <select style={{ width: '100%' }} name="board1" id="board1" onBlur={handleOnblur}>
                                                                     <option value="0">Select One</option>
-                                                                    <option value="1">Dhaka</option>
-                                                                    <option value="2">Cumilla</option>
-                                                                    <option value="3">Rajshahi</option>
-                                                                    <option value="4">Jashore</option>
-                                                                    <option value="5">Chittagong</option>
-                                                                    <option value="6">Barishal</option>
-                                                                    <option value="7">Sylhet</option>
-                                                                    <option value="8">Dinajpur</option>
-                                                                    <option value="9">Madrasah</option>
-                                                                    <option value="10">Open University</option>
-                                                                    <option value="11">Mymensingh</option>
-                                                                    <option value="12">The State Medical Faculty of Bangladesh</option>
-                                                                    <option value="14">Pharmacy Council of Bangladesh</option>
-                                                                    <option value="15">Cambridge International - IGCE</option>
-                                                                    <option value="16">Edexcel International</option>
-                                                                    <option value="17">Bangladesh Technical Education Board (BTEB)</option>
-                                                                    <option value="20">Others</option>
+                                                                    {
+                                                                        ssc_board.map(board => <option key={board} value={board}>{board}</option>)
+                                                                    }
                                                                 </select>
                                                             </td>
                                                         </tr>
@@ -478,64 +493,10 @@ const ApplicationForm = () => {
                                                             <td>Group/Subject</td>
                                                             <td>
                                                                 <select style={{ width: '100%' }} name="subject1" id="subject1" onBlur={handleOnblur}>
-                                                                    <option value="0">Select One</option>
-                                                                    <option value="1">Science</option>
-                                                                    <option value="2">Humanities</option>
-                                                                    <option value="3">Business Studies</option>
-                                                                    <option value="12">Agriculture Technology</option>
-                                                                    <option value="13">Architecture and Interior Design Technology</option>
-                                                                    <option value="15">Automobile Technology</option>
-                                                                    <option value="16">Civil Technology</option>
-                                                                    <option value="20">Computer Science & Technology</option>
-                                                                    <option value="21">Chemical Technology</option>
-                                                                    <option value="22">Electrical Technology</option>
-                                                                    <option value="23">Data Telecommunication and Network Technology</option>
-                                                                    <option value="24">Electrical and Electronics Technology</option>
-                                                                    <option value="27">Environmental Technology</option>
-                                                                    <option value="31">Instrumentation & Process Control Technology</option>
-                                                                    <option value="32">Mechanical Technology</option>
-                                                                    <option value="34">Mechatronics Technology</option>
-                                                                    <option value="36">Power Technology</option>
-                                                                    <option value="38">Refregeration & Air Conditioning Technology</option>
-                                                                    <option value="41">Telecommunication Technology</option>
-                                                                    <option value="42">Electronics Technology</option>
-                                                                    <option value="43">Library Science</option>
-                                                                    <option value="44">Survey</option>
-                                                                    <option value="45">General Mechanics</option>
-                                                                    <option value="46">Firm Machinery</option>
-                                                                    <option value="47">Textile Technology</option>
-                                                                    <option value="51">Agro-Based Food</option>
-                                                                    <option value="52">General Electronics</option>
-                                                                    <option value="53">Automotive</option>
-                                                                    <option value="54">Building Maintenance</option>
-                                                                    <option value="55">Wood Working</option>
-                                                                    <option value="56">Ceramic</option>
-                                                                    <option value="57">Civil Construction</option>
-                                                                    <option value="58">Computer and Information Technology</option>
-                                                                    <option value="59">Civil Drafting with CAD</option>
-                                                                    <option value="60">Mechanical Drafting with CAD</option>
-                                                                    <option value="61">Dress Making</option>
-                                                                    <option value="62">Dyeing, Printing and Finishing</option>
-                                                                    <option value="63">Electrical Maintenance Works</option>
-                                                                    <option value="64">Farm Machinery</option>
-                                                                    <option value="65">Fish Culture and Breeding</option>
-                                                                    <option value="66">Food Processing and Preservation</option>
-                                                                    <option value="67">General Mechanics</option>
-                                                                    <option value="68">Livestock Rearing and Farming</option>
-                                                                    <option value="69">Machine Tools Operation</option>
-                                                                    <option value="70">Poultry Rearing and Farming</option>
-                                                                    <option value="71">Patient Care</option>
-                                                                    <option value="72">General Electrical Works</option>
-                                                                    <option value="73">Plumbing and Pipe Fittings</option>
-                                                                    <option value="74">Refrigeration and Air Conditioning</option>
-                                                                    <option value="75">Glass</option>
-                                                                    <option value="76">Flower, Fruit and Vegetable Cultivation</option>
-                                                                    <option value="77">Weaving</option>
-                                                                    <option value="78">Welding and Fabrication</option>
-                                                                    <option value="79">Architectural Drafting with CAD</option>
-                                                                    <option value="80">Knitting</option>
-                                                                    <option value="81">Shrimp Culture and Breeding</option>
-                                                                    <option value="99">Others</option>
+                                                                    <option value="0">Select Subject</option>
+                                                                    {
+                                                                        ssc1.map(s => <option key={s} value={s}>{s}</option>)
+                                                                    }
                                                                 </select>
                                                             </td>
                                                         </tr>
