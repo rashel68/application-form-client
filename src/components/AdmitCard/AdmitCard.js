@@ -143,7 +143,16 @@ const AdmitCard = () => {
                         <td>{applicant.result1}</td>
                         <td>{applicant.year1}</td>
                         <td>{applicant.roll1}</td>
-                        <td></td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr>
+                        <td>{applicant.exam2}</td>
+                        <td>{applicant.hsc_board}</td>
+                        <td>{applicant.hsc_subject}</td>
+                        <td>{applicant.hsc_result}</td>
+                        <td>{applicant.hsc_year}</td>
+                        <td>{applicant.hsc_roll}</td>
+                        <td>N/A</td>
                     </tr>
                 </tbody>
             </table>

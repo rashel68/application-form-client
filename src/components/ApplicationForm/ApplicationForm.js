@@ -34,7 +34,9 @@ const ApplicationForm = () => {
         Diploma_in_Medical_Technology: ['Radiography', 'Laboratory', 'Dental', 'Physiotherapy', 'Radiotherapy', 'Pharmacy', 'Others'],
         HSC_Vocational: ['Agro Machinery', 'Automobile', 'Building Maintenance and Construction', 'Clothing and Garments Finishing', 'Computer Operation and Maintenance', 'Drafting Civil', 'Electrical Works and Maintenance', 'Electronic Control and Communication', 'Fish Culture and Breeding', 'Machine Tools Operation and Maintenance', 'Poultry Rearing and Farming', 'Refrigeration and Air-conditioning', 'Welding and Fabrication', 'Industrial Wood Working', 'Food', 'Mechatronics', 'Others'],
         Diploma_in_Agriculture: ['Agriculture', 'Others']
-    }
+    };
+    let pass_year = ['1984', '1985', '1986', '1987', '1988', '1989', '1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022']
+
 
     if (exam1 === "Dakhil_Vocational") {
         setExam1("SSC_Vocational");
@@ -534,45 +536,9 @@ const ApplicationForm = () => {
                                                             <td>
                                                                 <select style={{ width: '100%' }} name="year1" id="year1" onBlur={handleOnblur}>
                                                                     <option value="0" >Select One</option>
-                                                                    <option value="1984">1984</option>
-                                                                    <option value="1985">1985</option>
-                                                                    <option value="1986">1986</option>
-                                                                    <option value="1987">1987</option>
-                                                                    <option value="1988">1988</option>
-                                                                    <option value="1989">1989</option>
-                                                                    <option value="1990">1990</option>
-                                                                    <option value="1991">1991</option>
-                                                                    <option value="1992">1992</option>
-                                                                    <option value="1993">1993</option>
-                                                                    <option value="1994">1994</option>
-                                                                    <option value="1995">1995</option>
-                                                                    <option value="1996">1996</option>
-                                                                    <option value="1997">1997</option>
-                                                                    <option value="1998">1998</option>
-                                                                    <option value="1999">1999</option>
-                                                                    <option value="2000">2000</option>
-                                                                    <option value="2001">2001</option>
-                                                                    <option value="2002">2002</option>
-                                                                    <option value="2003">2003</option>
-                                                                    <option value="2004">2004</option>
-                                                                    <option value="2005">2005</option>
-                                                                    <option value="2006">2006</option>
-                                                                    <option value="2007">2007</option>
-                                                                    <option value="2008">2008</option>
-                                                                    <option value="2009">2009</option>
-                                                                    <option value="2010">2010</option>
-                                                                    <option value="2011">2011</option>
-                                                                    <option value="2012">2012</option>
-                                                                    <option value="2013">2013</option>
-                                                                    <option value="2014">2014</option>
-                                                                    <option value="2015">2015</option>
-                                                                    <option value="2016">2016</option>
-                                                                    <option value="2017">2017</option>
-                                                                    <option value="2018">2018</option>
-                                                                    <option value="2019">2019</option>
-                                                                    <option value="2020">2020</option>
-                                                                    <option value="2021">2021</option>
-                                                                    <option value="2022">2022</option>
+                                                                    {
+                                                                        pass_year.map(y => <option key={y} value={y}>{y}</option>)
+                                                                    }
                                                                 </select>
                                                             </td>
                                                         </tr>
@@ -609,7 +575,7 @@ const ApplicationForm = () => {
                                                         <tr>
                                                             <td>Board</td>
                                                             <td>
-                                                                <select style={{ width: '100%' }} onBlur={handleOnblur}>
+                                                                <select style={{ width: '100%' }} onBlur={handleOnblur} name="hsc_board" id="hsc_board">
                                                                     <option value="0">Select One</option>
                                                                     {
                                                                         ssc_board.map(board => <option key={board} value={board}>{board}</option>)
@@ -619,20 +585,25 @@ const ApplicationForm = () => {
                                                         </tr>
                                                         <tr>
                                                             <td>Roll No</td>
-                                                            <td><input type="text" /></td>
+                                                            <td><input type="text" name="hsc_roll" id="hsc_roll" onBlur={handleOnblur} /></td>
                                                         </tr>
                                                         <tr>
                                                             <td>Result</td>
                                                             <td>
-                                                                <select style={{ width: '100%' }}>
+                                                                <select style={{ width: '100%' }} name="hsc_result" id="hsc_result">
                                                                     <option value="0" >Select One</option>
+                                                                    <option value="1">1st Division</option>
+                                                                    <option value="2">2nd Division</option>
+                                                                    <option value="3">3rd Division</option>
+                                                                    <option value="4">GPA(out of 4)</option>
+                                                                    <option value="5">GPA(out of 5)</option>
                                                                 </select>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>Group/Subject</td>
                                                             <td>
-                                                                <select style={{ width: '100%' }}>
+                                                                <select style={{ width: '100%' }} name="hsc_subject" id="hsc_subject" onBlur={handleOnblur}>
                                                                     <option value="0" >Select One</option>
                                                                     {
                                                                         hsc1.map(h => <option key={h} value={h}>{h}</option>)
@@ -643,8 +614,11 @@ const ApplicationForm = () => {
                                                         <tr>
                                                             <td>Passing Year</td>
                                                             <td>
-                                                                <select style={{ width: '100%' }}>
+                                                                <select style={{ width: '100%' }} name="hsc_pass" id="hsc_pass" onBlur={handleOnblur}>
                                                                     <option value="0" >Select One</option>
+                                                                    {
+                                                                        pass_year.map(p => <option key={p} value={p}>{p}</option>)
+                                                                    }
                                                                 </select>
                                                             </td>
                                                         </tr>
