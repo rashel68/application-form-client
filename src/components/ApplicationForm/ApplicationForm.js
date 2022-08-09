@@ -10,6 +10,8 @@ const ApplicationForm = () => {
     const [dist2, setDist2] = useState([]);
     const [upzilla, setUpzilla] = useState();
     const [exam1, setExam1] = useState([]);
+    const [exam2, setExam2] = useState([]);
+
     // console.log(exam1);
 
     let m_dist = [];
@@ -23,27 +25,54 @@ const ApplicationForm = () => {
 
     let ssc_sub = {
         SSC: ['Science', 'Humanities', 'Business Studies', 'Others'],
-        Dakhil: ['Science', 'Humanities', 'Business Studies', 'Others'],
+
         SSC_Vocational: ['Agriculture Technology', 'Architecture and Interior Design Technology', 'Automobile Technology', 'Civil Technology', 'Computer Science & Technology',
             'Chemical Technology', 'Electrical Technology', 'Data Telecommunication and Network Technology', 'Electrical and Electronics Technology', 'Environmental Technology', 'Instrumentation & Process Control Technology', 'Mechanical Technology', 'Mechatronics Technology', 'Power Technology', 'Refregeration & Air Conditioning Technology', 'Telecommunication Technology', 'Electronics Technology', 'Library Science', 'Survey',
-            'General Mechanics', 'Firm Machinery', 'Textile Technology', 'Agro-Based Food', 'General Electronics', 'Automotive', 'Building Maintenance', 'Wood Working', 'Ceramic', 'Civil Construction', 'Computer and Information Technology', 'Civil Drafting with CAD', 'Mechanical Drafting with CAD', 'Dress Making', 'Dyeing, Printing and Finishing', 'Electrical Maintenance Works', 'Farm Machinery', 'Fish Culture and Breeding', 'Food Processing and Preservation', ' Livestock Rearing and Farming', 'Machine Tools Operation', 'Poultry Rearing and Farming', 'Patient Care', 'General Electrical Works', 'Plumbing and Pipe Fittings', 'Refrigeration and Air Conditioning', 'Glass', 'Flower, Fruit and Vegetable Cultivation', 'Weaving', 'Welding and Fabrication', 'Architectural Drafting with CAD', 'Knitting', 'Shrimp Culture and Breeding', 'Others']
+            'General Mechanics', 'Firm Machinery', 'Textile Technology', 'Agro-Based Food', 'General Electronics', 'Automotive', 'Building Maintenance', 'Wood Working', 'Ceramic', 'Civil Construction', 'Computer and Information Technology', 'Civil Drafting with CAD', 'Mechanical Drafting with CAD', 'Dress Making', 'Dyeing, Printing and Finishing', 'Electrical Maintenance Works', 'Farm Machinery', 'Fish Culture and Breeding', 'Food Processing and Preservation', ' Livestock Rearing and Farming', 'Machine Tools Operation', 'Poultry Rearing and Farming', 'Patient Care', 'General Electrical Works', 'Plumbing and Pipe Fittings', 'Refrigeration and Air Conditioning', 'Glass', 'Flower, Fruit and Vegetable Cultivation', 'Weaving', 'Welding and Fabrication', 'Architectural Drafting with CAD', 'Knitting', 'Shrimp Culture and Breeding', 'Others'],
+
+        Diploma_in_Engineering: ['Agriculture', 'Architecture and Interior Design Technology', 'Automobile Technology', 'Civil Technology', 'Computer Science', 'Computer Technology', 'Computer Science & Technology', 'Computer Science & Engineering Technology', 'Chemical Technology', 'Electrical Technology', 'Data Telecommunication and Network Technology', 'Electrical and Electronics Technology', 'Environmental Technology', 'Instrumentation & Process Control Technology', 'Mechanical Technology', 'Mechatronics Technology', 'Power Technology', 'Printing Technology', 'Refrigeration & Air Conditioning Technology', 'Textile Technology', 'Telecommunication Technology', 'Electronics Technology', 'Library Science', 'Survey', 'General Mechanics', 'Farm Machinery', 'Shipbuilding Technology', 'Ceramic Technology', 'Graphic Design Technology', 'Glass Technology', 'Textile Engineering', 'Jute Technology', 'Garments Design and Pattern Making', 'Food Technology', 'Others'],
+        Diploma_in_Medical_Technology: ['Radiography', 'Laboratory', 'Dental', 'Physiotherapy', 'Radiotherapy', 'Pharmacy', 'Others'],
+        HSC_Vocational: ['Agro Machinery', 'Automobile', 'Building Maintenance and Construction', 'Clothing and Garments Finishing', 'Computer Operation and Maintenance', 'Drafting Civil', 'Electrical Works and Maintenance', 'Electronic Control and Communication', 'Fish Culture and Breeding', 'Machine Tools Operation and Maintenance', 'Poultry Rearing and Farming', 'Refrigeration and Air-conditioning', 'Welding and Fabrication', 'Industrial Wood Working', 'Food', 'Mechatronics', 'Others'],
+        Diploma_in_Agriculture: ['Agriculture', 'Others']
     }
 
     if (exam1 === "Dakhil_Vocational") {
         setExam1("SSC_Vocational");
     }
     if (exam1 === "SSC_Equivalent") {
-        setExam1("SSC_Vocational");
+        setExam1("SSC");
     }
     if (exam1 === "O_Level") {
-        setExam1("SSC_Vocational");
+        setExam1("SSC");
+    }
+    if (exam1 === "Dakhil") {
+        setExam1("SSC");
+    }
+    if (exam2 === "HSC") {
+        setExam2("SSC")
+    }
+    if (exam2 === "Alim") {
+        setExam2("SSC")
+    }
+    if (exam2 === "Business Management") {
+        setExam2("SSC")
+    }
+    if (exam2 === "A Level") {
+        setExam2("SSC")
+    }
+    if (exam2 === "HSC Equivalent") {
+        setExam2("SSC")
     }
 
     let ssc = ssc_sub[exam1];
+    let hsc = ssc_sub[exam2];
     let ssc1 = [];
+    let hsc1 = [];
     for (let n in ssc_sub[exam1]) {
         ssc1.push(ssc[n]);
-
+    }
+    for (let h in ssc_sub[exam2]) {
+        hsc1.push(hsc[h]);
     }
 
     useEffect(() => {
@@ -563,16 +592,28 @@ const ApplicationForm = () => {
                                                         <tr>
                                                             <td>Examination</td>
                                                             <td>
-                                                                <select style={{ width: '100%' }}>
+                                                                <select style={{ width: '100%' }} name="exam2" id="exam2" onBlur={handleOnblur} onChange={e => setExam2(e.target.value)}>
                                                                     <option value="0" >Select One</option>
+                                                                    <option value="HSC">H.S.C</option>
+                                                                    <option value="Alim">Alim</option>
+                                                                    <option value="Business Management">Business Management</option>
+                                                                    <option value="Diploma_in_Engineering">Diploma-in-Engineering</option>
+                                                                    <option value="A Level">A Level/Sr. Cambridge</option>
+                                                                    <option value="HSC Equivalent">H.S.C Equivalent</option>
+                                                                    <option value="Diploma_in_Medical_Technology">Diploma in Medical Technology</option>
+                                                                    <option value="Diploma_in_Agriculture">Diploma in Agriculture</option>
+                                                                    <option value="HSC_Vocational">H.S.C Vocational</option>
                                                                 </select>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>Board</td>
                                                             <td>
-                                                                <select style={{ width: '100%' }}>
-                                                                    <option>Select One</option>
+                                                                <select style={{ width: '100%' }} onBlur={handleOnblur}>
+                                                                    <option value="0">Select One</option>
+                                                                    {
+                                                                        ssc_board.map(board => <option key={board} value={board}>{board}</option>)
+                                                                    }
                                                                 </select>
                                                             </td>
                                                         </tr>
@@ -593,6 +634,9 @@ const ApplicationForm = () => {
                                                             <td>
                                                                 <select style={{ width: '100%' }}>
                                                                     <option value="0" >Select One</option>
+                                                                    {
+                                                                        hsc1.map(h => <option key={h} value={h}>{h}</option>)
+                                                                    }
                                                                 </select>
                                                             </td>
                                                         </tr>
