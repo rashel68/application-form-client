@@ -1,65 +1,47 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './ApplicationForm.css';
 
 const ApplicationForm = () => {
-    // var distObject = {
-    //     "Bhola": {
-    //         "Charfassion": ["Bhola Sadar", "Burhanuddin", "Lalmohon", "Charfassion"],
-    //         "Bhola Sadar": ["Borders", "Margins", "Backgrounds", "Float"],
-    //         "Burhanuddin": ["Variables", "Operators", "Functions", "Conditions"],
-    //         "Lalmohon": ["Variables", "Operators", "Functions", "Conditions"],
-    //         "Dowlotkhan": ["Variables", "Operators", "Functions", "Conditions"]
-    //     },
-    //     "Dhaka": {
-    //         "Mirpur": ["Variables", "Strings", "Arrays"],
-    //         "Mohammadpur": ["SELECT", "UPDATE", "DELETE"]
-    //     }
-    // }
-
-    // window.onload = function () {
-    //     var districtSel = document.getElementById("district");
-    //     var upzillaSel = document.getElementById("upzilla");
-    //     // var upzillaSel = document.getElementById("upzilla");
-    //     for (var x in distObject) {
-    //         districtSel.options[districtSel.options.length] = new Option(x, x);
-    //     }
-    //     districtSel.onchange = function () {
-    //         //empty upzillas- and upzillas- dropdowns
-    //         // upzillaSel.length = 1;
-    //         upzillaSel.length = 1;
-    //         //display correct values
-    //         for (var y in distObject[this.value]) {
-    //             upzillaSel.options[upzillaSel.options.length] = new Option(y, y);
-    //         }
-    //     }
-
-    // } 
-    // const autoFill = e => {
-    //     let chk = document.getElementById("p_chk");
-    //     let m_care = document.getElementById("M_CareOf");
-    //     let m_village = document.getElementById("M_Village").value;
-    //     let m_dist = document.getElementById("M_District").value;
-    //     let m_upzilla = document.getElementById("M_Upzilla").value;
-    //     let m_poffice = document.getElementById("M_POffice").value;
-    //     let m_pcode = document.getElementById("M_PCode").value;
-
-    //     let p_care = document.getElementById("p_CareOf");
-    //     let p_village = document.getElementById("p_Village").value;
-    //     let p_dist = document.getElementById("p_District").value;
-    //     let p_upzilla = document.getElementById("p_Upzilla").value;
-    //     let p_poffice = document.getElementById("p_POffice").value;
-    //     let p_pcode = document.getElementById("p_PCode").value;
-    //     if (chk.checked === true) {
-    //         let mcv = m_care.value;
-    //         p_care.value = mcv;
-
-    //     }
-    //     console.log(chk.checked);
-    //     console.log(m_care);
-    // }
     const [applicant, setApplicant] = useState({});
     let [id, setId] = useState('');
+    const [districtObject, setDistrictObject] = useState({});
+    const [dist, setDist] = useState([]);
+    const [dist2, setDist2] = useState([]);
+    const [upzilla, setUpzilla] = useState();
+
+    let m_dist = [];
+    let p_dist = [];
+    let m_upzilla = [];
+    let p_upzilla = [];
+    let union;
+    let union1 = [];
+    // let union1 = [];
+    useEffect(() => {
+        fetch('./dist.json')
+            .then(res => res.json())
+            .then(data => setDistrictObject(data))
+    }, []);
+
+    for (let d in districtObject) {
+        m_dist.push(d);
+        p_dist.push(d);
+    }
+    for (let u in districtObject[dist]) {
+        m_upzilla.push(u);
+    }
+    for (let up in districtObject[dist2]) {
+        p_upzilla.push(up);
+    }
+    let upz = districtObject[dist];
+    for (let y in upz) {
+        // console.log(upz[upzilla]);
+        union = upz[upzilla];
+        // console.log(union);
+        for (let un in union) {
+            union1.push(union[un]);
+        }
+    }
 
     const handleOnblur = e => {
         const field = e.target.name;
@@ -317,81 +299,23 @@ const ApplicationForm = () => {
                                                         <tr>
                                                             <td>District</td>
                                                             <td>
-                                                                <select style={{ width: '100%' }} name="M_District" id="M_District" onBlur={handleOnblur}>
-                                                                    <option value="0" >Select One</option>
-                                                                    <option value="Bagerhat">Bagerhat</option>
-                                                                    <option value="Bandarban">Bandarban</option>
-                                                                    <option value="Barguna">Barguna</option>
-                                                                    <option value="Barishal">Barishal</option>
-                                                                    <option value="Bhola">Bhola</option>
-                                                                    <option value="Bogura">Bogura</option>
-                                                                    <option value="Brahmanbaria">Brahmanbaria</option>
-                                                                    <option value="Chandpur">Chandpur</option>
-                                                                    <option value="Chapai Nawabganj">Chapai Nawabganj</option>
-                                                                    <option value="Chattogram">Chattogram</option>
-                                                                    <option value="Chuadanga">Chuadanga</option>
-                                                                    <option value="Cox`s Bazar">Cox`s Bazar</option>
-                                                                    <option value="Cumilla">Cumilla</option>
-                                                                    <option value="Dhaka">Dhaka</option>
-                                                                    <option value="Dinajpur">Dinajpur</option>
-                                                                    <option value="Faridpur">Faridpur</option>
-                                                                    <option value="Feni">Feni</option>
-                                                                    <option value="Gaibandha">Gaibandha</option>
-                                                                    <option value="Gazipur">Gazipur</option>
-                                                                    <option value="Gopalganj">Gopalganj</option>
-                                                                    <option value="Habiganj">Habiganj</option>
-                                                                    <option value="Jaipurhat">Jaipurhat</option>
-                                                                    <option value="Jamalpur">Jamalpur</option>
-                                                                    <option value="Jashore">Jashore</option>
-                                                                    <option value="Jhalokhathi">Jhalokhathi</option>
-                                                                    <option value="Jhenaidah">Jhenaidah</option>
-                                                                    <option value="Khagrachhari">Khagrachhari</option>
-                                                                    <option value="Khulna">Khulna</option>
-                                                                    <option value="Kishorganj">Kishorganj</option>
-                                                                    <option value="Kurigram">Kurigram</option>
-                                                                    <option value="Kushtia">Kushtia</option>
-                                                                    <option value="Lalmonirhat">Lalmonirhat</option>
-                                                                    <option value="Luxmipur">Luxmipur</option>
-                                                                    <option value="Madaripur">Madaripur</option>
-                                                                    <option value="Magura">Magura</option>
-                                                                    <option value="Manikganj">Manikganj</option>
-                                                                    <option value="Meharpur">Meharpur</option>
-                                                                    <option value="Mouluvibazar">Mouluvibazar</option>
-                                                                    <option value="Munshiganj">Munshiganj</option>
-                                                                    <option value="Mymensingh">Mymensingh</option>
-                                                                    <option value="Naogaon">Naogaon</option>
-                                                                    <option value="Narail">Narail</option>
-                                                                    <option value="Narayanganj">Narayanganj</option>
-                                                                    <option value="Narsingdi">Narsingdi</option>
-                                                                    <option value="Natore">Natore</option>
-                                                                    <option value="Netrokona">Netrokona</option>
-                                                                    <option value="Nilphamari">Nilphamari</option>
-                                                                    <option value="Noakhali">Noakhali</option>
-                                                                    <option value="Pabna">Pabna</option>
-                                                                    <option value="Panchagarh">Panchagarh</option>
-                                                                    <option value="Patuakhali">Patuakhali</option>
-                                                                    <option value="Pirojpur">Pirojpur</option>
-                                                                    <option value="Rajbari">Rajbari</option>
-                                                                    <option value="Rajshahi">Rajshahi</option>
-                                                                    <option value="Rangamati">Rangamati</option>
-                                                                    <option value="Rangpur">Rangpur</option>
-                                                                    <option value="Satkhira">Satkhira</option>
-                                                                    <option value="Shariatpur">Shariatpur</option>
-                                                                    <option value="Sherpur">Sherpur</option>
-                                                                    <option value="Sirajganj">Sirajganj</option>
-                                                                    <option value="Sunamganj">Sunamganj</option>
-                                                                    <option value="Sylhet">Sylhet</option>
-                                                                    <option value="Tangail">Tangail</option>
-                                                                    <option value="Thakurgaon">Thakurgaon</option>
+                                                                <select style={{ width: '100%' }} name="M_District" id="M_District" onBlur={handleOnblur} onChange={e => setDist(e.target.value)}>
+                                                                    <option value="0" >Select District</option>
+                                                                    {
+                                                                        m_dist.map(d => <option key={d} value={d} >{d}</option>)
+                                                                    }
                                                                 </select>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>Upzilla</td>
                                                             <td>
-                                                                <input type="text" name="M_Upzilla" id="M_Upzilla" onBlur={handleOnblur}>
-
-                                                                </input>
+                                                                <select style={{ width: '100%' }} name="M_Upzilla" id="M_Upzilla" onBlur={handleOnblur}>
+                                                                    <option value="0">Select Upzilla</option>
+                                                                    {
+                                                                        m_upzilla.map(u => <option key={u} value={u}>{u}</option>)
+                                                                    }
+                                                                </select>
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -428,89 +352,32 @@ const ApplicationForm = () => {
                                                         <tr>
                                                             <td>District</td>
                                                             <td>
-                                                                <select style={{ width: '100%' }} name="P_District" id="P_District" onBlur={handleOnblur}>
-                                                                    <option value="0" >Select One</option>
-                                                                    <option value="Bagerhat">Bagerhat</option>
-                                                                    <option value="Bandarban">Bandarban</option>
-                                                                    <option value="Barguna">Barguna</option>
-                                                                    <option value="Barishal">Barishal</option>
-                                                                    <option value="Bhola">Bhola</option>
-                                                                    <option value="Bogura">Bogura</option>
-                                                                    <option value="Brahmanbaria">Brahmanbaria</option>
-                                                                    <option value="Chandpur">Chandpur</option>
-                                                                    <option value="Chapai Nawabganj">Chapai Nawabganj</option>
-                                                                    <option value="Chattogram">Chattogram</option>
-                                                                    <option value="Chuadanga">Chuadanga</option>
-                                                                    <option value="Cox`s Bazar">Cox`s Bazar</option>
-                                                                    <option value="Cumilla">Cumilla</option>
-                                                                    <option value="Dhaka">Dhaka</option>
-                                                                    <option value="Dinajpur">Dinajpur</option>
-                                                                    <option value="Faridpur">Faridpur</option>
-                                                                    <option value="Feni">Feni</option>
-                                                                    <option value="Gaibandha">Gaibandha</option>
-                                                                    <option value="Gazipur">Gazipur</option>
-                                                                    <option value="Gopalganj">Gopalganj</option>
-                                                                    <option value="Habiganj">Habiganj</option>
-                                                                    <option value="Jaipurhat">Jaipurhat</option>
-                                                                    <option value="Jamalpur">Jamalpur</option>
-                                                                    <option value="Jashore">Jashore</option>
-                                                                    <option value="Jhalokhathi">Jhalokhathi</option>
-                                                                    <option value="Jhenaidah">Jhenaidah</option>
-                                                                    <option value="Khagrachhari">Khagrachhari</option>
-                                                                    <option value="Khulna">Khulna</option>
-                                                                    <option value="Kishorganj">Kishorganj</option>
-                                                                    <option value="Kurigram">Kurigram</option>
-                                                                    <option value="Kushtia">Kushtia</option>
-                                                                    <option value="Lalmonirhat">Lalmonirhat</option>
-                                                                    <option value="Luxmipur">Luxmipur</option>
-                                                                    <option value="Madaripur">Madaripur</option>
-                                                                    <option value="Magura">Magura</option>
-                                                                    <option value="Manikganj">Manikganj</option>
-                                                                    <option value="Meharpur">Meharpur</option>
-                                                                    <option value="Mouluvibazar">Mouluvibazar</option>
-                                                                    <option value="Munshiganj">Munshiganj</option>
-                                                                    <option value="Mymensingh">Mymensingh</option>
-                                                                    <option value="Naogaon">Naogaon</option>
-                                                                    <option value="Narail">Narail</option>
-                                                                    <option value="Narayanganj">Narayanganj</option>
-                                                                    <option value="Narsingdi">Narsingdi</option>
-                                                                    <option value="Natore">Natore</option>
-                                                                    <option value="Netrokona">Netrokona</option>
-                                                                    <option value="Nilphamari">Nilphamari</option>
-                                                                    <option value="Noakhali">Noakhali</option>
-                                                                    <option value="Pabna">Pabna</option>
-                                                                    <option value="Panchagarh">Panchagarh</option>
-                                                                    <option value="Patuakhali">Patuakhali</option>
-                                                                    <option value="Pirojpur">Pirojpur</option>
-                                                                    <option value="Rajbari">Rajbari</option>
-                                                                    <option value="Rajshahi">Rajshahi</option>
-                                                                    <option value="Rangamati">Rangamati</option>
-                                                                    <option value="Rangpur">Rangpur</option>
-                                                                    <option value="Satkhira">Satkhira</option>
-                                                                    <option value="Shariatpur">Shariatpur</option>
-                                                                    <option value="Sherpur">Sherpur</option>
-                                                                    <option value="Sirajganj">Sirajganj</option>
-                                                                    <option value="Sunamganj">Sunamganj</option>
-                                                                    <option value="Sylhet">Sylhet</option>
-                                                                    <option value="Tangail">Tangail</option>
-                                                                    <option value="Thakurgaon">Thakurgaon</option>
+                                                                <select style={{ width: '100%' }} name="P_District" id="P_District" onBlur={handleOnblur} onChange={e => setDist2(e.target.value)}>
+                                                                    <option value="0" >Select District</option>
+                                                                    {
+                                                                        p_dist.map(d => <option key={d} value={d} >{d}</option>)
+                                                                    }
                                                                 </select>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>Upzilla</td>
                                                             <td>
-                                                                <input type="text" name="P_Upzilla" id="P_Upzilla" onBlur={handleOnblur}>
-                                                                </input>
+                                                                <select style={{ width: '100%' }} name="P_Upzilla" id="P_Upzilla" onBlur={handleOnblur}>
+                                                                    <option value="0">Select Upzilla</option>
+                                                                    {
+                                                                        p_upzilla.map(u => <option key={u} value={u}>{u}</option>)
+                                                                    }
+                                                                </select>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>Post Office</td>
-                                                            <td><input type="text" name="P_POffice" id="P_POffice" /></td>
+                                                            <td><input type="text" name="P_POffice" id="P_POffice" onBlur={handleOnblur} /></td>
                                                         </tr>
                                                         <tr>
                                                             <td>Post Code</td>
-                                                            <td><input type="number" name="P_PCode" id="P_PCode" /></td>
+                                                            <td><input type="number" name="P_PCode" id="P_PCode" onBlur={handleOnblur} /></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
