@@ -11,26 +11,29 @@ const ApplicationForm = () => {
     const [upzilla, setUpzilla] = useState();
     const [exam1, setExam1] = useState([]);
     const [exam2, setExam2] = useState([]);
+    const [exam3, setExam3] = useState([]);
     const [fill, setFill] = useState([]);
     const [care, setCare] = useState([]);
     const [village, setVillage] = useState([]);
     const [mupzilla, setMupzilla] = useState([]);
 
-    // console.log(mupzilla);
 
 
+    // let cupzilla = mupzilla;
     let permanent = document.getElementById('P_CareOf');
     let permanentVillage = document.getElementById('P_Village');
     let permanentDist = document.getElementById('P_District');
-    let permanentUpzilla = document.getElementById('permanent_upzilla');
+    // let mx = document.getElementById('KK');
+    // console.log(mx.value);
+
     // console.log(presentValue);
     if (fill === 'cheked') {
         permanent.value = care;
         permanentVillage.value = village;
         permanentDist.value = dist;
-        // permanentUpzilla.value = mupzilla;
-        console.log(mupzilla);
         // setDist2(dist);
+        // mx.value = "Rashel";
+        console.log(mupzilla);
         // console.log(care);
     }
 
@@ -55,6 +58,426 @@ const ApplicationForm = () => {
         HSC_Vocational: ['Agro Machinery', 'Automobile', 'Building Maintenance and Construction', 'Clothing and Garments Finishing', 'Computer Operation and Maintenance', 'Drafting Civil', 'Electrical Works and Maintenance', 'Electronic Control and Communication', 'Fish Culture and Breeding', 'Machine Tools Operation and Maintenance', 'Poultry Rearing and Farming', 'Refrigeration and Air-conditioning', 'Welding and Fabrication', 'Industrial Wood Working', 'Food', 'Mechatronics', 'Others'],
         Diploma_in_Agriculture: ['Agriculture', 'Others']
     };
+    let bachelor = {
+        BSC_Engineering: [
+            'Aeronautical Engineering',
+            'Architecture',
+            'Chemical Engineering',
+            'Civil Engineering',
+            'Computer Engineering',
+            'Computer Science',
+            'Computer Science & Engineering',
+            'Computer Science & Information Technology',
+            'Electrical & Electronics Engineering',
+            'Electrical Engineering',
+            'Electronic Engineering',
+            'Electronics & Communication Engineering',
+            'Electronics & Telecommunication Engineering',
+            'Environmental Engineering',
+            'Food and Process Engineering',
+            'Genetic Engineering',
+            'Industrial & Production Engineering',
+            'Information and Communication Engineering',
+            'Information and Communication Technology',
+            'Leather Technology',
+            'Marine Engineering',
+            'Materials Science & Engineering',
+            'Mechanical Engineering',
+            'Metallurgical Engineering',
+            'Microwave Engineering',
+            'Mineral Engineering',
+            'Mining Engineering',
+            'Naval Architecture',
+            'Physical Planning',
+            'Regional Planning',
+            'Software Engineering',
+            'Structural Engineering',
+            'Telecommunication Engineering',
+            'Textile Technology',
+            'Town Planning',
+            'Urban & Regional Planning',
+            'Water Resource Engineering',
+            'Others'
+        ],
+        BSC_in_Agriculture: [
+            'Agr.Co-operative & Marketing',
+            'Agriculture Chemistry',
+            'Agriculture Co-operatives',
+            'Agriculture Economics',
+            'Agriculture Engineering',
+            'Agriculture Extension',
+            'Agriculture Finance',
+            'Agriculture Marketing',
+            'Agriculture Science',
+            'Agriculture Soil Science',
+            'Agriculture Statistics',
+            'Agriculture Water Management',
+            'Agro Forestry',
+            'Agronnomy',
+            'Agronomy & Aquaculture',
+            'Agronomy & Aquaculture Extension',
+            'Anatomology',
+            'Anatomy & Histology',
+            'Animal Breeding & Genetic',
+            'Animal Husbandry',
+            'Animal Nutrition',
+            'Animal Science',
+            'Bio-Technology',
+            'Breeding',
+            'Business Studies',
+            'Corp Botany',
+            'Dairy Science',
+            'Doc.of Veterinary Science',
+            'Farm Power & Machinery',
+            'Farm Structure',
+            'Fisheries',
+            'Fisheries & Aquaculture',
+            'Fisheries Biology',
+            'Fisheries Management',
+            'Fisheries Technology',
+            'Food Tech. & Rural Industry',
+            'Forestry',
+            'Horticulture',
+            'Livestock',
+            'Microbiology & Hygenic',
+            'Paratrology',
+            'Plant Pathology',
+            'Poultry Science',
+            'Production Economics',
+            'Rural Sociology',
+            'Surgery & Obstate',
+            'Others'
+        ],
+        MBBS: [
+            'Dental Surgery',
+            'Medicine & Surgery',
+            'Others'
+        ],
+        Honors: [
+            'Accounting',
+            'Agriculture',
+            'Anthropology',
+            'Applied Chemistry',
+            'Applied Mathematics',
+            'Applied Physics',
+            'Archaeology',
+            'Bangla',
+            'Banking',
+            'Biochemistry',
+            'Botany',
+            'Business Administration',
+            'Chemistry',
+            'Clinical Psychology',
+            'Communication Disorders',
+            'Computer Engineering',
+            'Computer Science',
+            'Computer Science & Engineering',
+            'Computer Science & Information Technology',
+            'Criminology',
+            'Criminology & Police Science',
+            'Development Studies',
+            'Drama & Music',
+            'Drawing and Printing',
+            'Economics',
+            'Education',
+            'English',
+            'Environmental science',
+            'Ethics',
+            'Finance',
+            'Finance and Banking',
+            'Fine Arts',
+            'Folklore',
+            'Forestry',
+            'Genetic Engineering and Biotechnology',
+            'Genetic and Breeding',
+            'Geography',
+            'Geography and Environment',
+            'Geology/Geology and Mining',
+            'Government and Politics',
+            'Graphics',
+            'Health Economics',
+            'History',
+            'History of Music',
+            'Home Economics',
+            'Industrial Arts',
+            'Information Science and Library Management',
+            'Information Technology',
+            'Information and Communication Technology',
+            'International Law',
+            'International Relations',
+            'Islamic History and Culture',
+            'Islamic Studies',
+            'Language/Linguistic',
+            'Law/Jurisprudence',
+            'Library Science',
+            'Management',
+            'Marine Science',
+            'Marketing',
+            'Mass Communication & Journalism',
+            'Materials Science & Engineering',
+            'Mathematics',
+            'Medical Technology',
+            'Microbiology',
+            'Nutrition and Food Science',
+            'Pali',
+            'Peace and Conflict Studies',
+            'Persian',
+            'Pharmaceutical Chemistry',
+            'Pharmacy',
+            'Philosophy',
+            'Physics',
+            'Political Science',
+            'Population Science',
+            'Population Science and Human Resource Development',
+            'Printing and Publication Studies',
+            'Psychology',
+            'Public Administration',
+            'Public Finance',
+            'Sanskrit',
+            'Social Welfare/Social Work',
+            'Social Works',
+            'Sociology',
+            'Soil Science',
+            'Soil Water and Environment Science',
+            'Statistics',
+            'Television, Film and Photography',
+            'Urban Development',
+            'Urdu',
+            'Women Studies',
+            'Women and Gender Studies',
+            'World Religion',
+            'Zoology',
+            'Others'
+        ],
+        Pass_Course: [
+            'B.A',
+            'B.S.S',
+            'B.Sc',
+            'B.com',
+            'L.L.B',
+            'Others'
+        ],
+        Fazil: [
+            'Akaid',
+            'Arabic',
+            'Fikha',
+            'Hadith',
+            'Islamic Studies',
+            'Modern Arabic',
+            'Tafsir',
+            'Others'
+        ],
+        BBA: [
+            'Accounting',
+            'Accounting and Information Systems',
+            'Banking',
+            'Banking and Insurance',
+            'Business Administration',
+            'Finance',
+            'Finance and Banking',
+            'Human Resource Management',
+            'International Business',
+            'Management',
+            'Management Information Systems',
+            'Marketing',
+            'Organization Strategy and Leadership',
+            'Tourism and Hospitality Management',
+            'Others'
+        ],
+        Graduation_Equivalent: [
+            'A & B Section of A.M.I.E',
+            'Accounting',
+            'Accounting and Information Systems',
+            'Aeronautical Engineering',
+            'Agr.Co-operative & Marketing',
+            'Agriculture',
+            'Agriculture Chemistry',
+            'Agriculture Co-operatives',
+            'Agriculture Economics',
+            'Agriculture Engineering',
+            'Agriculture Extension',
+            'Agriculture Finance',
+            'Agriculture Marketing',
+            'Agriculture Science',
+            'Agriculture Soil Science',
+            'Agriculture Statistics',
+            'Agriculture Water Management',
+            'Agro Forestry',
+            'Agronnomy',
+            'Agronomy & Aquaculture',
+            'Agronomy & Aquaculture Extension',
+            'Akaid',
+            'Anatomology',
+            'Anatomy & Histology',
+            'Animal Breeding & Genetic',
+            'Animal Husbandry',
+            'Animal Nutrition',
+            'Animal Science',
+            'Anthropology',
+            'Applied Chemistry',
+            'Applied Mathematics',
+            'Applied Physics',
+            'Arabic',
+            'Archaeology',
+            'Architecture',
+            'B.A',
+            'B.S.S',
+            'B.Sc',
+            'B.com',
+            'Bangla',
+            'Banking',
+            'Banking and Insurance',
+            'Bio-Technology',
+            'Biochemistry',
+            'Botany',
+            'Breeding',
+            'Business Administration',
+            'Business Studies',
+            'Chemical Engineering',
+            'Chemistry',
+            'Civil Engineering',
+            'Clinical Psychology',
+            'Communication Disorders',
+            'Computer Engineering',
+            'Computer Science',
+            'Computer Science & Engineering',
+            'Computer Science & Information Technology',
+            'Corp Botany',
+            'Criminology',
+            'Criminology & Police Science',
+            'Dairy Science',
+            'Dental Surgery',
+            'Development Studies',
+            'Doc.of Veterinary Science',
+            'Drama & Music',
+            'Drawing and Printing',
+            'Economics',
+            'Education',
+            'Electrical & Electronics Engineering',
+            'Electrical Engineering',
+            'Electronic Engineering',
+            'Electronics & Communication Engineering',
+            'Electronics & Telecommunication Engineering',
+            'English',
+            'Environmental Engineering',
+            'Environmental science',
+            'Ethics',
+            'Farm Power & Machinery',
+            'Farm Structure',
+            'Fikha',
+            'Finance',
+            'Finance and Banking',
+            'Fine Arts',
+            'Fisheries',
+            'Fisheries & Aquaculture',
+            'Fisheries Biology',
+            'Fisheries Management',
+            'Fisheries Technology',
+            'Folklore',
+            'Food Tech. & Rural Industry',
+            'Food and Process Engineering',
+            'Forestry',
+            'Genetic Engineering',
+            'Genetic Engineering and Biotechnology',
+            'Genetic and Breeding',
+            'Geography',
+            'Geography and Environment',
+            'Geology/Geology and Mining',
+            'Government and Politics',
+            'Graphics',
+            'Hadith',
+            'Health Economics',
+            'History',
+            'History of Music',
+            'Home Economics',
+            'Horticulture',
+            'Human Resource Management',
+            'Industrial & Production Engineering',
+            'Industrial Arts',
+            'Information Science and Library Management',
+            'Information Technology',
+            'Information and Communication Engineering',
+            'International Business',
+            'International Law',
+            'International Relations',
+            'Islamic History and Culture',
+            'Islamic Studies',
+            'L.L.B',
+            'Language/Linguistic',
+            'Law/Jurisprudence',
+            'Leather Technology',
+            'Library Science',
+            'Livestock',
+            'Management',
+            'Management Information Systems',
+            'Marine Engineering',
+            'Marine Science',
+            'Marketing',
+            'Mass Communication & Journalism',
+            'Materials Science & Engineering',
+            'Mathematics',
+            'Mechanical Engineering',
+            'Medical Technology',
+            'Medicine & Surgery',
+            'Metallurgical Engineering',
+            'Microbiology',
+            'Microbiology & Hygenic',
+            'Microwave Engineering',
+            'Mineral Engineering',
+            'Mining Engineering',
+            'Modern Arabic',
+            'Naval Architecture',
+            'Nutrition and Food Science',
+            'Organization Strategy and Leadership',
+            'Pali',
+            'Paratrology',
+            'Peace and Conflict Studies',
+            'Persian',
+            'Pharmaceutical Chemistry',
+            'Pharmacy',
+            'Philosophy',
+            'Physical Planning',
+            'Physics',
+            'Plant Pathology',
+            'Political Science',
+            'Population Science',
+            'Population Science and Human Resource Development',
+            'Poultry Science',
+            'Printing and Publication Studies',
+            'Production Economics',
+            'Psychology',
+            'Public Administration',
+            'Public Finance',
+            'Regional Planning',
+            'Rural Sociology',
+            'Sanskrit',
+            'Social Welfare/Social Work',
+            'Social Works',
+            'Sociology',
+            'Software Engineering',
+            'Soil Science',
+            'Soil Water and Environment Science',
+            'Statistics',
+            'Structural Engineering',
+            'Surgery & Obstate',
+            'Tafsir',
+            'Telecommunication Engineering',
+            'Television, Film and Photography',
+            'Textile Technology',
+            'Tourism and Hospitality Management',
+            'Town Planning',
+            'Urban & Regional Planning',
+            'Urban Development',
+            'Urdu',
+            'Water & Environment Science',
+            'Water Resource Engineering',
+            'Women Studies',
+            'Women and Gender Studies',
+            'World Religion',
+            'Zoology',
+            'Others'
+        ]
+    }
     let pass_year = ['1984', '1985', '1986', '1987', '1988', '1989', '1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022']
 
 
@@ -88,14 +511,21 @@ const ApplicationForm = () => {
 
     let ssc = ssc_sub[exam1];
     let hsc = ssc_sub[exam2];
+    let graduate = bachelor[exam3];
     let ssc1 = [];
     let hsc1 = [];
+    let graduate1 = [];
     for (let n in ssc_sub[exam1]) {
         ssc1.push(ssc[n]);
     }
     for (let h in ssc_sub[exam2]) {
         hsc1.push(hsc[h]);
     }
+    for (let g in bachelor[exam3]) {
+        graduate1.push(graduate[g]);
+    }
+
+
 
     useEffect(() => {
         fetch('./dist.json')
@@ -443,7 +873,7 @@ const ApplicationForm = () => {
                                                         <tr>
                                                             <td>Upzilla</td>
                                                             <td>
-                                                                <select style={{ width: '100%' }} name="P_Upzilla" id="permanent_upzilla" onBlur={handleOnblur}>
+                                                                <select style={{ width: '100%' }} name="P_Upzilla" id="KK" onBlur={handleOnblur}>
                                                                     <option value="0">Select Upzilla</option>
                                                                     {
                                                                         p_upzilla.map(u => <option key={u} value={u}>{u}</option>)
@@ -670,9 +1100,16 @@ const ApplicationForm = () => {
                                                         <tr>
                                                             <td style={{ width: '23%' }}>Examination</td>
                                                             <td style={{ width: '25%' }}>
-                                                                <select style={{ width: '100%' }}>
+                                                                <select style={{ width: '100%' }} name="exam3" id="exam3" onBlur={handleOnblur} onChange={e => setExam3(e.target.value)}>
                                                                     <option value="0" >Select One</option>
-                                                                    <option value="BSC" >B.Sc In Computer Science Engineering</option>
+                                                                    <option value="BSC_Engineering">BSC Engineering</option>
+                                                                    <option value="BSC_in_Agriculture">BSC In Agriculture</option>
+                                                                    <option value="MBBS">MBBS</option>
+                                                                    <option value="Honors">Honors</option>
+                                                                    <option value="Pass_Course">Pass Course</option>
+                                                                    <option value="Fazil">Fazil</option>
+                                                                    <option value="BBA">BBA</option>
+                                                                    <option value="Graduation_Equivalent">Graduation Equivalent</option>
 
                                                                 </select>
                                                             </td>
@@ -690,7 +1127,10 @@ const ApplicationForm = () => {
                                                             <td style={{ width: '23%' }}>Subject/Degree</td>
                                                             <td style={{ width: '25%' }}>
                                                                 <select style={{ width: '100%' }}>
-                                                                    <option>Select One</option>
+                                                                    <option value="0">Select One</option>
+                                                                    {
+                                                                        graduate1.map(g => <option key={g} value={g}>{g}</option>)
+                                                                    }
 
                                                                 </select>
                                                             </td>
