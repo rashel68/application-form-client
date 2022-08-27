@@ -1365,7 +1365,12 @@ const ApplicationForm = () => {
                                                             <td style={{ width: '25%' }}>
                                                                 <select style={{ width: '100%' }}>
                                                                     <option value="0" >Select One</option>
-
+                                                                    <option value="1st Class">1st Class</option>
+                                                                    <option value="2nd Class">2nd Class</option>
+                                                                    <option value="3rd Class">3rd Class</option>
+                                                                    <option value="4">CGPA (Out of 4)</option>
+                                                                    <option value="5">CGPA (Out of 5)</option>
+                                                                    <option value="Passed">Passed</option>
                                                                 </select>
                                                             </td>
                                                         </tr>
@@ -1384,7 +1389,10 @@ const ApplicationForm = () => {
                                                             <td style={{ width: '23%' }}>Passing Year</td>
                                                             <td style={{ width: '25%' }}>
                                                                 <select style={{ width: '100%' }}>
-                                                                    <option>Select One</option>
+                                                                    <option value="0">Select One</option>
+                                                                    {
+                                                                        pass_year.map(py => <option key={py} value={py}>{py}</option>)
+                                                                    }
 
                                                                 </select>
                                                             </td>
@@ -1405,9 +1413,11 @@ const ApplicationForm = () => {
                                                             <td>Course Duration</td>
                                                             <td style={{ width: '25%' }}>
                                                                 <select style={{ width: '100%' }}>
-                                                                    <option>Select One</option>
-                                                                    <option>Web Development</option>
-
+                                                                    <option value="0">Select One</option>
+                                                                    <option value="02 Years">02 Years</option>
+                                                                    <option value="03 Years">03 Years</option>
+                                                                    <option value="04 Years">04 Years</option>
+                                                                    <option value="05 Years">05 Years</option>
                                                                 </select>
                                                             </td>
                                                         </tr>
