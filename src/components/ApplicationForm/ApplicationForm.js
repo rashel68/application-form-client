@@ -843,7 +843,7 @@ const ApplicationForm = () => {
                             <td>:</td>
                             <td>
                                 <select className='inputField' style={{ backgroundColor: '#bdbaba', width: '100%', outline: 'none' }} name="postName" id="postName" onBlur={handleOnblur}>
-                                    <option value='select post'>Select a Post</option>
+                                    <option value='0'>Select a Post</option>
                                     <option value='Computer Operator'>Computer Operator</option>
                                     <option value='Steno Typist'>Steno Typist</option>
                                     <option value='LDA Computer Operator'>LDA Computer Operator</option>
