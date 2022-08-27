@@ -1363,7 +1363,7 @@ const ApplicationForm = () => {
 
                                                             <td style={{ width: '23%' }}>Result</td>
                                                             <td style={{ width: '25%' }}>
-                                                                <select style={{ width: '100%' }}>
+                                                                <select style={{ width: '100%' }} onBlur={handleOnblur} id="exam3_result" name="exam3_result">
                                                                     <option value="0" >Select One</option>
                                                                     <option value="1st Class">1st Class</option>
                                                                     <option value="2nd Class">2nd Class</option>
@@ -1377,7 +1377,7 @@ const ApplicationForm = () => {
                                                         <tr>
                                                             <td style={{ width: '23%' }}>Subject/Degree</td>
                                                             <td style={{ width: '25%' }}>
-                                                                <select style={{ width: '100%' }}>
+                                                                <select style={{ width: '100%' }} onBlur={handleOnblur} id="exam3_sub" name="exam3_sub">
                                                                     <option value="0">Select One</option>
                                                                     {
                                                                         graduate1.map(g => <option key={g} value={g}>{g}</option>)
@@ -1388,7 +1388,7 @@ const ApplicationForm = () => {
                                                             <td></td>
                                                             <td style={{ width: '23%' }}>Passing Year</td>
                                                             <td style={{ width: '25%' }}>
-                                                                <select style={{ width: '100%' }}>
+                                                                <select style={{ width: '100%' }} onBlur={handleOnblur} id="exam3_passyr" name="exam3_passyr">
                                                                     <option value="0">Select One</option>
                                                                     {
                                                                         pass_year.map(py => <option key={py} value={py}>{py}</option>)
@@ -1412,7 +1412,7 @@ const ApplicationForm = () => {
                                                             <td style={{ width: '2%' }}></td>
                                                             <td>Course Duration</td>
                                                             <td style={{ width: '25%' }}>
-                                                                <select style={{ width: '100%' }}>
+                                                                <select style={{ width: '100%' }} onBlur={handleOnblur} id="exam3_duration" name="exam3_duration">
                                                                     <option value="0">Select One</option>
                                                                     <option value="02 Years">02 Years</option>
                                                                     <option value="03 Years">03 Years</option>
