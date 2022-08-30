@@ -16,15 +16,30 @@ const ApplicationForm = () => {
     const [care, setCare] = useState([]);
     const [village, setVillage] = useState([]);
     const [mupzilla, setMupzilla] = useState([]);
-
-
+    const [ssc4, setSsc4] = useState([]);
 
     // let cupzilla = mupzilla;
     let permanent = document.getElementById('P_CareOf');
     let permanentVillage = document.getElementById('P_Village');
     let permanentDist = document.getElementById('P_District');
-    // let mx = document.getElementById('KK');
-    // console.log(mx.value);
+
+
+    let ssc4_display;
+    let ssc5_display;
+    ssc4_display = 'none';
+    ssc5_display = 'none';
+
+    if (ssc4 === '4') {
+        // ssc_res4.style.display = "block";
+        // ssc_box.push('4');
+        ssc4_display = 'block';
+    }
+    if (ssc4 === '5') {
+        // ssc_res4.style.display = "block";
+        // ssc_box.push('4');
+        ssc5_display = 'block';
+    }
+
 
     // console.log(presentValue);
     if (fill === 'cheked') {
@@ -1206,7 +1221,7 @@ const ApplicationForm = () => {
                                                         <tr>
                                                             <td>Result</td>
                                                             <td>
-                                                                <select style={{ width: '100%' }} name="result1" id="result1" onBlur={handleOnblur}>
+                                                                <select style={{ width: '100%' }} name="result1" id="result1" onBlur={handleOnblur} onChange={e => setSsc4(e.target.value)}>
                                                                     <option value="0" >Select One</option>
                                                                     <option value="1">1st Division</option>
                                                                     <option value="2">2nd Division</option>
@@ -1214,6 +1229,8 @@ const ApplicationForm = () => {
                                                                     <option value="4">GPA(out of 4)</option>
                                                                     <option value="5">GPA(out of 5)</option>
                                                                 </select>
+                                                                <input type="number" id="ssc_4" name="result1" placeholder='GPA (out of 4)' onBlur={handleOnblur} style={{ display: ssc4_display, marginTop: '5px' }} />
+                                                                <input type="number" id="ssc_5" name="result1" onBlur={handleOnblur} style={{ display: ssc5_display, marginTop: '5px' }} placeholder='GPA (out of 5)' />
                                                             </td>
                                                         </tr>
                                                         <tr>
