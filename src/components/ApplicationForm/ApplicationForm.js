@@ -1223,14 +1223,14 @@ const ApplicationForm = () => {
                                                             <td>
                                                                 <select style={{ width: '100%' }} name="result1" id="result1" onBlur={handleOnblur} onChange={e => setSsc4(e.target.value)}>
                                                                     <option value="0" >Select One</option>
-                                                                    <option value="1">1st Division</option>
-                                                                    <option value="2">2nd Division</option>
-                                                                    <option value="3">3rd Division</option>
+                                                                    <option value="1st Division">1st Division</option>
+                                                                    <option value="2nd Division">2nd Division</option>
+                                                                    <option value="3rd Division">3rd Division</option>
                                                                     <option value="4">GPA(out of 4)</option>
                                                                     <option value="5">GPA(out of 5)</option>
                                                                 </select>
-                                                                <input type="number" id="ssc_4" name="result1" placeholder='GPA (out of 4)' onBlur={handleOnblur} style={{ display: ssc4_display, marginTop: '5px' }} />
-                                                                <input type="number" id="ssc_5" name="result1" onBlur={handleOnblur} style={{ display: ssc5_display, marginTop: '5px' }} placeholder='GPA (out of 5)' />
+                                                                <input type="text" id="ssc_4" name="result1" placeholder='GPA (out of 4)' onBlur={handleOnblur} style={{ display: ssc4_display, marginTop: '5px' }} />
+                                                                <input type="text" id="ssc_5" name="result1" onBlur={handleOnblur} style={{ display: ssc5_display, marginTop: '5px' }} placeholder='GPA (out of 5)' />
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -1305,9 +1305,9 @@ const ApplicationForm = () => {
                                                             <td>
                                                                 <select style={{ width: '100%' }} name="hsc_result" id="hsc_result" onBlur={handleOnblur} >
                                                                     <option value="0" >Select One</option>
-                                                                    <option value="1">1st Division</option>
-                                                                    <option value="2">2nd Division</option>
-                                                                    <option value="3">3rd Division</option>
+                                                                    <option value="1st Division">1st Division</option>
+                                                                    <option value="2nd Division">2nd Division</option>
+                                                                    <option value="3rd Division">3rd Division</option>
                                                                     <option value="4">GPA(out of 4)</option>
                                                                     <option value="5">GPA(out of 5)</option>
                                                                 </select>
