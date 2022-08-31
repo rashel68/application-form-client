@@ -19,9 +19,11 @@ const ApplicationForm = () => {
     const [ssc4, setSsc4] = useState([]);
 
     // let cupzilla = mupzilla;
+    let checkboxItem = document.getElementById('p_chk');
     let permanent = document.getElementById('P_CareOf');
     let permanentVillage = document.getElementById('P_Village');
     let permanentDist = document.getElementById('P_District');
+    let permanentUpz = document.getElementById('P_Upz');
 
 
     let ssc4_display;
@@ -30,27 +32,14 @@ const ApplicationForm = () => {
     ssc5_display = 'none';
 
     if (ssc4 === '4') {
-        // ssc_res4.style.display = "block";
-        // ssc_box.push('4');
         ssc4_display = 'block';
     }
     if (ssc4 === '5') {
-        // ssc_res4.style.display = "block";
-        // ssc_box.push('4');
         ssc5_display = 'block';
     }
 
 
     // console.log(presentValue);
-    if (fill === 'cheked') {
-        permanent.value = care;
-        permanentVillage.value = village;
-        permanentDist.value = dist;
-        // setDist2(dist);
-        // mx.value = "Rashel";
-        console.log(mupzilla);
-        // console.log(care);
-    }
 
     let m_dist = [];
     let p_dist = [];
@@ -58,6 +47,10 @@ const ApplicationForm = () => {
     let p_upzilla = [];
     let union;
     let union1 = [];
+
+
+
+
     let bday = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31'];
 
     let byear = ['1976', '1977', '1978', '1979', '1980', '1981', '1982', '1983', '1984', '1985', '1986', '1987', '1988', '1989', '1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004'];
@@ -809,21 +802,22 @@ const ApplicationForm = () => {
     }
     let upz = districtObject[dist];
     for (let y in upz) {
-        // console.log(upz[upzilla]);
         union = upz[upzilla];
-        // console.log(union);
         for (let un in union) {
             union1.push(union[un]);
         }
+    }
+    if (fill === 'cheked') {
+        permanent.value = care;
+        permanentVillage.value = village;
+        permanentDist.value = dist;
+        // p_upzilla.push(mupzilla);
     }
 
     const handleOnblur = e => {
         const field = e.target.name;
         const value = e.target.value;
         const newObj = { ...applicant }
-        // console.log(newObj);
-        // let xx = newObj;
-        // console.log(xx);
         newObj[field] = value;
 
         setApplicant(newObj);
@@ -1084,7 +1078,7 @@ const ApplicationForm = () => {
                                                         <tr>
                                                             <td>Upzilla</td>
                                                             <td>
-                                                                <select style={{ width: '100%' }} name="P_Upzilla" id="KK" onBlur={handleOnblur}>
+                                                                <select style={{ width: '100%' }} name="P_Upzilla" id="P_Upz" onBlur={handleOnblur}>
                                                                     <option value="0">Select Upzilla</option>
                                                                     {
                                                                         p_upzilla.map(u => <option key={u} value={u}>{u}</option>)
