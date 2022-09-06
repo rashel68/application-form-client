@@ -825,7 +825,13 @@ const ApplicationForm = () => {
     }
     // console.log(id);
 
+
     const handleAddUser = e => {
+        // if (applicant.applicantName.length < 3) {
+        //     alert('plz enter a valid name');
+        //     return;
+        // }
+
         fetch('http://localhost:5000/applicantCollection', {
             method: 'POST',
             headers: {

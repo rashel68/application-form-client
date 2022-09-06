@@ -12,30 +12,17 @@ const PaymentStatus = () => {
         b.disabled = false;
         c.disabled = false;
 
-        // if (a.checked === false) {
-        //     b.disabled = false;
-        //     c.disabled = false;
-        // }
-        // if (b.checked === false) {
-        //     a.disabled = false;
-        //     c.disabled = false;
-        // }
-        // if (c.checked === false) {
-        //     a.disabled = false;
-        //     b.disabled = false;
-        // }
-
-        if (a.checked === true) {
-            b.disabled = true;
+        if (a.checked === true && b.checked === true) {
+            // b.disabled = true;
             c.disabled = true;
         }
-        if (b.checked === true) {
+        if (b.checked === true && c.checked === true) {
             a.disabled = true;
-            c.disabled = true;
+            // c.disabled = true;
         }
-        if (c.checked === true) {
+        if (c.checked === true && a.checked === true) {
             b.disabled = true;
-            a.disabled = true;
+            // a.disabled = true;
         }
     }
     return (

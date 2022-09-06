@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { QRCodeSVG } from 'qrcode.react';
+import './AdmitCard.css';
 
 const AdmitCard = () => {
     const { id } = useParams();
@@ -15,8 +16,11 @@ const AdmitCard = () => {
     // console.log(applicant.postName);
     const admitStyle = {
         backgroundColor: '#ddd',
-        padding: '80px'
+        padding: '20px 60px'
     };
+    const printApplication = () => {
+        window.print();
+    }
 
     return (
         <div style={admitStyle}>
@@ -164,7 +168,9 @@ const AdmitCard = () => {
                         <td>{applicant.exam3_duration}</td>
                     </tr>
                 </tbody>
-            </table>
+            </table> <br />
+
+            <button onClick={printApplication} id="printBtn">Print Application</button>
 
         </div>
     );

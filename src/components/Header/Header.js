@@ -27,7 +27,7 @@ const Header = () => {
                         </tr>
                     </tbody>
                 </table>
-                <table border='2' bordercolor='#025c3b' cellPadding='4'>
+                <table border='2' bordercolor='#025c3b' cellPadding='4' id='menu'>
                     <tbody>
                         <tr height="45" style={{ backgroundColor: 'rgb(1, 129, 83)' }}>
                             <td><Link to="/home" style={menuStyle}>Home</Link></td>
