@@ -16,7 +16,8 @@ const AdmitCard = () => {
     // console.log(applicant.postName);
     const admitStyle = {
         backgroundColor: '#ddd',
-        padding: '20px 60px'
+        padding: '20px 60px',
+        borderBottom: '5px solid #025c3b'
     };
     const printApplication = () => {
         window.print();
