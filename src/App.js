@@ -11,6 +11,7 @@ import PaymentStatus from "./components/PaymentStatus/PaymentStatus";
 import Instructions from "./components/Home/Instructions/Instructions";
 import Advertisement from "./components/Advertisement/Advertisement";
 import AdminRoute from "./components/AdminRoute/AdminRoute";
+import Login from "./components/Login/Login";
 
 
 function App() {
@@ -52,6 +53,9 @@ function App() {
             </Route>
             <Route path="/adminRoute">
               <AdminRoute></AdminRoute>
+            </Route>
+            <Route path="/login">
+              <Login></Login>
             </Route>
           </Switch>
         </div>

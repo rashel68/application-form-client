@@ -1124,6 +1124,11 @@ const ApplicationForm = () => {
                             <td>:</td>
                             <td><input type='email' className='inputField' name="email" id="email" onBlur={handleOnblur} /></td>
                         </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td>:</td>
+                            <td><input type='password' className='inputField' name="password" id="password" onBlur={handleOnblur} /></td>
+                        </tr>
                         {/* academic qualification  */}
                         <tr>
                             <td colSpan="3">
