@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 import './ApplicationForm.css';
 
 const ApplicationForm = () => {
@@ -17,6 +18,7 @@ const ApplicationForm = () => {
     const [village, setVillage] = useState([]);
     const [mupzilla, setMupzilla] = useState([]);
     const [ssc4, setSsc4] = useState([]);
+    const { registerUser } = useAuth();
 
     // let cupzilla = mupzilla;
     let checkboxItem = document.getElementById('p_chk');
@@ -847,6 +849,7 @@ const ApplicationForm = () => {
                     e.target.reset();
                 }
             })
+        registerUser(applicant.email, applicant.password);
 
         e.preventDefault();
     }

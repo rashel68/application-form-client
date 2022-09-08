@@ -12,54 +12,57 @@ import Instructions from "./components/Home/Instructions/Instructions";
 import Advertisement from "./components/Advertisement/Advertisement";
 import AdminRoute from "./components/AdminRoute/AdminRoute";
 import Login from "./components/Login/Login";
+import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <div>
-          <Header></Header>
-          <Switch>
-            <Route exact path="/">
-              <Home></Home>
-            </Route>
-            <Route path="/home">
-              <Home></Home>
-            </Route>
-            <Route path="/adevertisement">
-              <Advertisement></Advertisement>
-            </Route>
-            <Route path="/signature">
-              <SignatureValidator></SignatureValidator>
-            </Route>
-            <Route path="/payment">
-              <PaymentStatus></PaymentStatus>
-            </Route>
-            <Route path="/instruction">
-              <Instructions></Instructions>
-            </Route>
-            <Route path='/admitCard/:id'>
-              <AdmitCard></AdmitCard>
-            </Route>
-            <Route exact path="/users">
-              <Users></Users>
-            </Route>
-            <Route path="/applicationForm">
-              <ApplicationForm></ApplicationForm>
-            </Route>
-            <Route path="/userCollection/update/:id">
-              <UpdateUser></UpdateUser>
-            </Route>
-            <Route path="/adminRoute">
-              <AdminRoute></AdminRoute>
-            </Route>
-            <Route path="/login">
-              <Login></Login>
-            </Route>
-          </Switch>
-        </div>
-      </Router>
+      <AuthProvider>
+        <Router>
+          <div>
+            <Header></Header>
+            <Switch>
+              <Route exact path="/">
+                <Home></Home>
+              </Route>
+              <Route path="/home">
+                <Home></Home>
+              </Route>
+              <Route path="/adevertisement">
+                <Advertisement></Advertisement>
+              </Route>
+              <Route path="/signature">
+                <SignatureValidator></SignatureValidator>
+              </Route>
+              <Route path="/payment">
+                <PaymentStatus></PaymentStatus>
+              </Route>
+              <Route path="/instruction">
+                <Instructions></Instructions>
+              </Route>
+              <Route path='/admitCard/:id'>
+                <AdmitCard></AdmitCard>
+              </Route>
+              <Route exact path="/users">
+                <Users></Users>
+              </Route>
+              <Route path="/applicationForm">
+                <ApplicationForm></ApplicationForm>
+              </Route>
+              <Route path="/userCollection/update/:id">
+                <UpdateUser></UpdateUser>
+              </Route>
+              <Route path="/adminRoute">
+                <AdminRoute></AdminRoute>
+              </Route>
+              <Route path="/login">
+                <Login></Login>
+              </Route>
+            </Switch>
+          </div>
+        </Router>
+      </AuthProvider>
     </div>
   );
 }
