@@ -24,6 +24,8 @@ const Login = () => {
     const fieldStyle = {
         padding: '8px',
         margin: '10px',
+        borderRadius: '10px',
+        border: '2px solid #025c3b'
 
     }
     return (
@@ -32,7 +34,8 @@ const Login = () => {
             <form onSubmit={handleLogin}>
                 <input onBlur={handleOnblur} style={fieldStyle} type="email" placeholder='Enter your email' /> <br />
                 <input onBlur={handleOnblur} style={fieldStyle} type="password" placeholder='Enter your password' /> <br />
-                <input style={fieldStyle} type="submit" value="Submit" />
+                {/* <input style={fieldStyle} type="submit" value="Submit" /> */}
+                <button type='submit'>Login</button>
             </form>
 
         </div>

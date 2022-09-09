@@ -13,6 +13,7 @@ import Advertisement from "./components/Advertisement/Advertisement";
 import AdminRoute from "./components/AdminRoute/AdminRoute";
 import Login from "./components/Login/Login";
 import AuthProvider from "./contexts/AuthProvider/AuthProvider";
+import PrivateRoute from "./components/Login/PrivateRoute/PrivateRoute";
 
 
 function App() {
@@ -53,9 +54,9 @@ function App() {
               <Route path="/userCollection/update/:id">
                 <UpdateUser></UpdateUser>
               </Route>
-              <Route path="/adminRoute">
+              <PrivateRoute path="/adminRoute">
                 <AdminRoute></AdminRoute>
-              </Route>
+              </PrivateRoute>
               <Route path="/login">
                 <Login></Login>
               </Route>

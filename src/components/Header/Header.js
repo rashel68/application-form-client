@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 import './Header.css';
 import bsri from './images/bsri.png';
 import govt_logo from './images/govt_logo.png';
 
 const Header = () => {
+    const { user, logOut } = useAuth();
     const menuStyle = {
         textDecoration: 'none',
         color: 'white'
@@ -31,7 +33,10 @@ const Header = () => {
                     <tbody>
                         <tr height="45" style={{ backgroundColor: 'rgb(1, 129, 83)' }}>
                             <td><Link to="/home" style={menuStyle}>Home</Link></td>
-                            <td><Link to="/signature" style={menuStyle}>Photo/Signature Validator</Link></td>
+                            <td>
+                                {user?.email ? <button onClick={logOut}>Logout</button>
+                                    : <Link to="/login" style={menuStyle}>Login</Link>}
+                            </td>
                             <td><Link to="/payment" style={menuStyle}>Payment Status</Link></td>
                             <td><Link to="/instruction" style={menuStyle}>Instructions</Link></td>
                             <td><Link to="/admitCard" style={menuStyle}>Admit Card</Link></td>
