@@ -18,7 +18,7 @@ const ApplicationForm = () => {
     const [village, setVillage] = useState([]);
     const [mupzilla, setMupzilla] = useState([]);
     const [ssc4, setSsc4] = useState([]);
-    const { registerUser } = useAuth();
+    const { registerUser, isLoading } = useAuth();
 
     // let cupzilla = mupzilla;
     let checkboxItem = document.getElementById('p_chk');
@@ -1476,6 +1476,7 @@ const ApplicationForm = () => {
                 <p>{id}</p>
 
             </form>
+            {isLoading && <p>Loading . . .</p>}
         </div>
     );
 };

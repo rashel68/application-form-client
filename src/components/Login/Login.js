@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
     const [loginData, setLoginData] = useState({});
     const { user, loginUser } = useAuth();
+
+    const location = useLocation();
+    const history = useHistory();
+
     const handleOnblur = (e) => {
         const field = e.target.name;
         const value = e.target.value;
@@ -12,7 +17,8 @@ const Login = () => {
         setLoginData(newObj);
     }
     const handleLogin = (e) => {
-        loginUser(loginData.email, loginData.password);
+        loginUser(loginData.email, loginData.password, location, history);
+        console.log(loginData);
 
         e.preventDefault();
     }
@@ -32,8 +38,8 @@ const Login = () => {
         <div style={loginStyle}>
             <h2 style={{ color: '#025c3b' }}>Login</h2>
             <form onSubmit={handleLogin}>
-                <input onBlur={handleOnblur} style={fieldStyle} type="email" placeholder='Enter your email' /> <br />
-                <input onBlur={handleOnblur} style={fieldStyle} type="password" placeholder='Enter your password' /> <br />
+                <input onBlur={handleOnblur} style={fieldStyle} type="email" name='email' placeholder='Enter your email' /> <br />
+                <input onBlur={handleOnblur} style={fieldStyle} type="password" name='password' placeholder='Enter your password' /> <br />
                 {/* <input style={fieldStyle} type="submit" value="Submit" /> */}
                 <button type='submit'>Login</button>
             </form>
