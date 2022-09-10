@@ -14,6 +14,7 @@ import AdminRoute from "./components/AdminRoute/AdminRoute";
 import Login from "./components/Login/Login";
 import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 import PrivateRoute from "./components/Login/PrivateRoute/PrivateRoute";
+import Applicant from "./components/Applicant/Applicant";
 
 
 function App() {
@@ -60,6 +61,9 @@ function App() {
               <Route path="/login">
                 <Login></Login>
               </Route>
+              <PrivateRoute path="/applicant">
+                <Applicant></Applicant>
+              </PrivateRoute>
             </Switch>
           </div>
         </Router>
