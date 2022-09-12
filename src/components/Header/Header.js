@@ -1,12 +1,15 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import './Header.css';
 import bsri from './images/bsri.png';
 import govt_logo from './images/govt_logo.png';
 
 const Header = () => {
+
     const { user, logOut } = useAuth();
+
+
     const menuStyle = {
         textDecoration: 'none',
         color: 'white'
@@ -39,7 +42,7 @@ const Header = () => {
                             </td>
                             <td><Link to="/payment" style={menuStyle}>Payment Status</Link></td>
                             <td><Link to="/instruction" style={menuStyle}>Instructions</Link></td>
-                            <td><Link to="/admitCard" style={menuStyle}>Admit Card</Link></td>
+                            <td><Link to="applicant" style={menuStyle}>Admit Card</Link></td>
                         </tr>
                     </tbody>
                 </table>

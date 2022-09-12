@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
-import AdmitCard from '../AdmitCard/AdmitCard';
+
 
 const Applicant = () => {
     const [applicants, setApplicants] = useState([]);
@@ -12,7 +12,7 @@ const Applicant = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setApplicants(data));
-    }, []);
+    }, [user.email]);
     const adminStyle = {
         backgroundColor: '#ddd',
         padding: '20px'
