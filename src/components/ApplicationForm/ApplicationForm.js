@@ -809,12 +809,15 @@ const ApplicationForm = () => {
             union1.push(union[un]);
         }
     }
-    if (fill === 'cheked') {
-        permanent.value = care;
-        permanentVillage.value = village;
-        permanentDist.value = dist;
-        // p_upzilla.push(mupzilla);
-    }
+
+
+    // Automatically filling same as current address
+    // if (fill === 'cheked') {
+    //     permanent.value = care;
+    //     permanentVillage.value = village;
+    //     permanentDist.value = dist;
+    //     // p_upzilla.push(mupzilla);
+    // }
 
     const handleOnblur = e => {
         const field = e.target.name;
@@ -1061,8 +1064,8 @@ const ApplicationForm = () => {
                                                         <tr>
                                                             <td colSpan="2">
                                                                 Permanent Address
-                                                                <input type="checkbox" id="p_chk" name="p_chk" value="cheked" onChange={e => setFill(e.target.value)} />
-                                                                <label htmlFor='p_chk'><small>same as present address</small></label>
+                                                                {/* <input type="checkbox" id="p_chk" name="p_chk" value="cheked" onChange={e => setFill(e.target.value)} />
+                                                                <label htmlFor='p_chk'><small>same as present address</small></label> */}
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -1434,7 +1437,9 @@ const ApplicationForm = () => {
 
                                                                         <tr>
                                                                             <td colSpan='2'>
-                                                                                <input type='file' />
+                                                                                <input type='file'
+                                                                                    onChange={e => console.log(e.target.files[0])}
+                                                                                />
                                                                             </td>
                                                                         </tr>
                                                                     </tbody>

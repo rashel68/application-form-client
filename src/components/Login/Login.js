@@ -40,8 +40,8 @@ const Login = () => {
             <form onSubmit={handleLogin}>
                 <input onBlur={handleOnblur} style={fieldStyle} type="email" name='email' placeholder='Enter your email' /> <br />
                 <input onBlur={handleOnblur} style={fieldStyle} type="password" name='password' placeholder='Enter your password' /> <br />
-                {/* <input style={fieldStyle} type="submit" value="Submit" /> */}
-                <button type='submit'>Login</button>
+                <input style={fieldStyle} type="submit" value="Submit" />
+                {/* <button type='submit'>Login</button> */}
             </form>
 
         </div>
