@@ -1475,10 +1475,9 @@ const ApplicationForm = () => {
                 </table>
 
                 <br /><br /><br />
-                <input type="submit" value="Submit" style={{ padding: '10px 20px', marginBottom: '20px' }} />
+                <input type="submit" value="Submit" style={{ padding: '10px 20px', marginBottom: '20px' }} /> <br />
 
-                <Link to={`/admitCard/${id}`}>chk</Link>
-                <p>{id}</p>
+                {id ? <Link to={`/admitCard/${id}`} style={{ textDecoration: 'none' }}>Print Application</Link> : <p></p>} <br />
 
             </form>
             {isLoading && <p>Loading . . .</p>}
