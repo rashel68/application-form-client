@@ -863,7 +863,7 @@ const ApplicationForm = () => {
                 <table cellSpacing="0" cellPadding="5" >
                     <tbody>
                         <tr>
-                            <td>Name of the Post</td>
+                            <td>Name of the Post <small style={{ color: 'red' }}>*</small></td>
                             <td>:</td>
                             <td>
                                 <select className='inputField' style={{ backgroundColor: '#bdbaba', width: '100%', outline: 'none' }} name="postName" id="postName" onBlur={handleOnblur}>
@@ -878,22 +878,22 @@ const ApplicationForm = () => {
                             </td>
                         </tr>
                         <tr>
-                            <td>Applicant's Name</td>
+                            <td>Applicant's Name <small style={{ color: 'red' }}>*</small></td>
                             <td>:</td>
                             <td><input className='inputField' type="text" placeholder=" " name="applicantName" id="applicantName" onBlur={handleOnblur} /></td>
                         </tr>
                         <tr>
-                            <td>Father's Name</td>
+                            <td>Father's Name <small style={{ color: 'red' }}>*</small></td>
                             <td>:</td>
                             <td><input className='inputField' type="text" placeholder=" " name="fname" id="fname" onBlur={handleOnblur} /></td>
                         </tr>
                         <tr>
-                            <td>Mother's Name</td>
+                            <td>Mother's Name <small style={{ color: 'red' }}>*</small></td>
                             <td>:</td>
                             <td><input className='inputField' type="text" placeholder=" " name="mname" id="mname" onBlur={handleOnblur} /></td>
                         </tr>
                         <tr>
-                            <td>Gender</td>
+                            <td>Gender <small style={{ color: 'red' }}>*</small></td>
                             <td>:</td>
                             <td>
                                 <select style={{ padding: '3px', width: '150px' }} name="gender" id="gender" onBlur={handleOnblur}>
@@ -905,7 +905,7 @@ const ApplicationForm = () => {
                             </td>
                         </tr>
                         <tr>
-                            <td>Date of Birth</td>
+                            <td>Date of Birth <small style={{ color: 'red' }}>*</small></td>
                             <td>:</td>
                             <td>
                                 <label htmlFor='date'> Day </label>
@@ -942,7 +942,7 @@ const ApplicationForm = () => {
                             </td>
                         </tr>
                         <tr>
-                            <td>Nationality</td>
+                            <td>Nationality <small style={{ color: 'red' }}>*</small></td>
                             <td>:</td>
                             <td>
                                 <select style={{ height: '25px', width: '120px', marginRight: '10px' }} name="nationality" id="nationality" onBlur={handleOnblur}>
@@ -962,7 +962,7 @@ const ApplicationForm = () => {
                             </td>
                         </tr>
                         <tr>
-                            <td>National ID</td>
+                            <td>National ID <small style={{ color: 'red' }}>*</small></td>
                             <td>:</td>
                             <td><input className='inputField' type="number" placeholder=" " name="NID" id="NID" onBlur={handleOnblur} /></td>
                         </tr>
@@ -1013,7 +1013,7 @@ const ApplicationForm = () => {
                                                     <tbody>
 
                                                         <tr>
-                                                            <td colSpan="2">Mailing Address</td>
+                                                            <td colSpan="2">Mailing Address <small style={{ color: 'red' }}>*</small></td>
                                                         </tr>
                                                         <tr>
                                                             <td>Care of</td>
@@ -1063,7 +1063,7 @@ const ApplicationForm = () => {
 
                                                         <tr>
                                                             <td colSpan="2">
-                                                                Permanent Address
+                                                                Permanent Address <small style={{ color: 'red' }}>*</small>
                                                                 {/* <input type="checkbox" id="p_chk" name="p_chk" value="cheked" onChange={e => setFill(e.target.value)} />
                                                                 <label htmlFor='p_chk'><small>same as present address</small></label> */}
                                                             </td>
@@ -1116,22 +1116,22 @@ const ApplicationForm = () => {
 
                         </tr>
                         <tr>
-                            <td>Mobile Number</td>
+                            <td>Mobile Number <small style={{ color: 'red' }}>*</small></td>
                             <td>:</td>
                             <td><input type='number' name="p_number" id="p_number" onBlur={handleOnblur} /> <small style={{ color: 'red', lineHeight: '.5' }}> *plz mention a mobile number for getting info</small></td>
                         </tr>
                         <tr>
-                            <td>Confirm Mobile</td>
+                            <td>Confirm Mobile <small style={{ color: 'red' }}>*</small></td>
                             <td>:</td>
                             <td><input type='number' name="cp_number" id="cp_number" onBlur={handleOnblur} /> <small>plz retype mobile number</small></td>
                         </tr>
                         <tr>
-                            <td>Email Address</td>
+                            <td>Email Address <small style={{ color: 'red' }}>*</small></td>
                             <td>:</td>
                             <td><input type='email' className='inputField' name="email" id="email" onBlur={handleOnblur} /></td>
                         </tr>
                         <tr>
-                            <td>Password</td>
+                            <td>Password <small style={{ color: 'red' }}>*</small></td>
                             <td>:</td>
                             <td><input type='password' className='inputField' name="password" id="password" onBlur={handleOnblur} /></td>
                         </tr>
