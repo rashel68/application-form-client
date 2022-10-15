@@ -1456,7 +1456,6 @@ const ApplicationForm = () => {
                                                 <table style={{ width: '100%' }}>
                                                     <tbody>
                                                         <tr style={{ backgroundColor: '#dfdfdf' }}>
-                                                            {/* SSC or Equivalent */}
                                                             <td style={{ width: '48%' }}>
                                                                 <table cellPadding="5" style={{ width: '100%', border: '1px solid #99C1D0' }}>
                                                                     <tbody>

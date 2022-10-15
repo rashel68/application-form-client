@@ -15,7 +15,8 @@ const Applicant = () => {
     }, [user.email]);
     const adminStyle = {
         backgroundColor: '#ddd',
-        padding: '20px'
+        padding: '20px 20px 80px 20px',
+        borderBottom: '2px solid #025c3b'
     };
     return (
         <div style={adminStyle}>
