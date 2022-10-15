@@ -17,7 +17,9 @@ const ApplicationForm = () => {
     const [care, setCare] = useState([]);
     const [village, setVillage] = useState([]);
     const [mupzilla, setMupzilla] = useState([]);
-    const [ssc4, setSsc4] = useState([]);
+    const [ssc_gpa, setSsc_gpa] = useState([]);
+    const [hsc_gpa, setHsc_gpa] = useState([]);
+    const [hnrs_gpa, setHnrs_gpa] = useState([]);
     const { registerUser, isLoading } = useAuth();
 
     // let cupzilla = mupzilla;
@@ -30,14 +32,37 @@ const ApplicationForm = () => {
 
     let ssc4_display;
     let ssc5_display;
+    let hsc4_display;
+    let hsc5_display;
+    let hnrs4_display;
+    let hnrs5_display;
     ssc4_display = 'none';
     ssc5_display = 'none';
+    hsc4_display = 'none';
+    hsc5_display = 'none';
+    hnrs4_display = 'none';
+    hnrs5_display = 'none';
 
-    if (ssc4 === '4') {
+
+    if (ssc_gpa === '4') {
         ssc4_display = 'block';
     }
-    if (ssc4 === '5') {
+    if (ssc_gpa === '5') {
         ssc5_display = 'block';
+    }
+
+    if (hsc_gpa === '4') {
+        hsc4_display = 'block';
+    }
+    if (hsc_gpa === '5') {
+        hsc5_display = 'block';
+    }
+
+    if (hnrs_gpa === '4') {
+        hnrs4_display = 'block';
+    }
+    if (hnrs_gpa === '5') {
+        hnrs5_display = 'block';
     }
 
 
@@ -1182,7 +1207,7 @@ const ApplicationForm = () => {
                                                         <tr>
                                                             <td>Result</td>
                                                             <td>
-                                                                <select style={{ width: '100%' }} name="result1" id="result1" onBlur={handleOnblur} onChange={e => setSsc4(e.target.value)}>
+                                                                <select style={{ width: '100%' }} name="result1" id="result1" onBlur={handleOnblur} onChange={e => setSsc_gpa(e.target.value)}>
                                                                     <option value="0" >Select One</option>
                                                                     <option value="1st Division">1st Division</option>
                                                                     <option value="2nd Division">2nd Division</option>
@@ -1264,7 +1289,7 @@ const ApplicationForm = () => {
                                                         <tr>
                                                             <td>Result</td>
                                                             <td>
-                                                                <select style={{ width: '100%' }} name="hsc_result" id="hsc_result" onBlur={handleOnblur} >
+                                                                <select style={{ width: '100%' }} name="hsc_result" id="hsc_result" onBlur={handleOnblur} onChange={e => setHsc_gpa(e.target.value)}>
                                                                     <option value="0" >Select One</option>
                                                                     <option value="1st Division">1st Division</option>
                                                                     <option value="2nd Division">2nd Division</option>
@@ -1272,6 +1297,8 @@ const ApplicationForm = () => {
                                                                     <option value="4">GPA(out of 4)</option>
                                                                     <option value="5">GPA(out of 5)</option>
                                                                 </select>
+                                                                <input type="text" id="hsc_4" name="hsc_result" placeholder='GPA (out of 4)' onBlur={handleOnblur} style={{ display: hsc4_display, marginTop: '5px' }} />
+                                                                <input type="text" id="hsc_5" name="hsc_result" onBlur={handleOnblur} style={{ display: hsc5_display, marginTop: '5px' }} placeholder='GPA (out of 5)' />
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -1341,7 +1368,7 @@ const ApplicationForm = () => {
 
                                                             <td style={{ width: '23%' }}>Result</td>
                                                             <td style={{ width: '25%' }}>
-                                                                <select style={{ width: '100%' }} onBlur={handleOnblur} id="exam3_result" name="exam3_result">
+                                                                <select style={{ width: '100%' }} onBlur={handleOnblur} id="exam3_result" name="exam3_result" onChange={e => setHnrs_gpa(e.target.value)}>
                                                                     <option value="0" >Select One</option>
                                                                     <option value="1st Class">1st Class</option>
                                                                     <option value="2nd Class">2nd Class</option>
@@ -1350,6 +1377,8 @@ const ApplicationForm = () => {
                                                                     <option value="5">CGPA (Out of 5)</option>
                                                                     <option value="Passed">Passed</option>
                                                                 </select>
+                                                                <input type="text" id="exam3_result" name="exam3_result" placeholder='GPA (out of 4)' onBlur={handleOnblur} style={{ display: hnrs4_display, marginTop: '5px' }} />
+                                                                <input type="text" id="exam3_result" name="exam3_result" onBlur={handleOnblur} style={{ display: hnrs5_display, marginTop: '5px' }} placeholder='GPA (out of 5)' />
                                                             </td>
                                                         </tr>
                                                         <tr>
