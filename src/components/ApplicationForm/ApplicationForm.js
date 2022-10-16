@@ -21,6 +21,8 @@ const ApplicationForm = () => {
     const [hsc_gpa, setHsc_gpa] = useState([]);
     const [hnrs_gpa, setHnrs_gpa] = useState([]);
     const { registerUser, isLoading } = useAuth();
+    // const [isDisable, setIsDisable] = ('');
+    // const [isDisabled] = ([]);
 
     // let cupzilla = mupzilla;
     let checkboxItem = document.getElementById('p_chk');
@@ -836,6 +838,18 @@ const ApplicationForm = () => {
     }
 
 
+    function sbBtn() {
+
+        let sb = document.getElementById('submit_btn');
+        let declare_chk = document.getElementById('declare');
+        // sb.disabled = "disabled";
+        sb.disabled = true;
+        if (declare_chk.checked === true) {
+            sb.disabled = false;
+        }
+
+    }
+
     // Automatically filling same as current address
     // if (fill === 'cheked') {
     //     permanent.value = care;
@@ -1495,6 +1509,9 @@ const ApplicationForm = () => {
                                                 </table>
                                             </td>
                                         </tr>
+                                        <tr>
+                                            <td style={{ textAlign: 'center', paddingTop: '20px' }}><input type="checkbox" id="declare" value="cheked" onClick={sbBtn} /> I declare that the above information is correct and I would like to submit </td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </td>
@@ -1503,7 +1520,7 @@ const ApplicationForm = () => {
                 </table>
 
                 <br /><br /><br />
-                <input type="submit" value="Submit" style={{ padding: '10px 20px', marginBottom: '20px' }} /> <br />
+                <input type="submit" value="Submit" id="submit_btn" disabled style={{ padding: '10px 20px', marginBottom: '20px' }} /> <br />
 
                 {id ? <Link to={`/admitCard/${id}`} style={{ textDecoration: 'none' }}>Print Application</Link> : <p></p>} <br />
 
