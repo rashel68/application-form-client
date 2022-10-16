@@ -34,7 +34,7 @@ function app_form_validator(theForm) {
         theForm.name.focus();
         return (false);
     }
-    // Father Name
+    // Father Name 
     if (theForm.fathername.value == "") {
         alert("Please Enter Father's Name.");
         theForm.fathername.focus();

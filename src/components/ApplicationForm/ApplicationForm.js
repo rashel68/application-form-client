@@ -842,7 +842,6 @@ const ApplicationForm = () => {
 
         let sb = document.getElementById('submit_btn');
         let declare_chk = document.getElementById('declare');
-        // sb.disabled = "disabled";
         sb.disabled = true;
         if (declare_chk.checked === true) {
             sb.disabled = false;
@@ -863,18 +862,23 @@ const ApplicationForm = () => {
         const value = e.target.value;
         const newObj = { ...applicant }
         newObj[field] = value;
-
         setApplicant(newObj);
-
     }
-    // console.log(id);
 
 
+    // Submit Form
     const handleAddUser = e => {
-        // if (applicant.applicantName.length < 3) {
-        //     alert('plz enter a valid name');
-        //     return;
-        // }
+
+        if (applicant.postName <= 0) {
+            alert('plz select a post');
+            return (false);
+        }
+
+        if (applicant.applicantName.length < 3) {
+            alert('plz enter a valid name');
+            // applicant.applicantName.focus();
+            return (false);
+        }
 
         fetch('http://localhost:5000/applicantCollection', {
             method: 'POST',
@@ -1382,7 +1386,7 @@ const ApplicationForm = () => {
 
                                                             <td style={{ width: '23%' }}>Result</td>
                                                             <td style={{ width: '25%' }}>
-                                                                <select style={{ width: '100%' }} onBlur={handleOnblur} id="exam3_result" name="exam3_result" onChange={e => setHnrs_gpa(e.target.value)}>
+                                                                <select style={{ width: '100%' }} onBlur={handleOnblur} id="exam3_result1" name="exam3_result" onChange={e => setHnrs_gpa(e.target.value)}>
                                                                     <option value="0" >Select One</option>
                                                                     <option value="1st Class">1st Class</option>
                                                                     <option value="2nd Class">2nd Class</option>
@@ -1391,8 +1395,8 @@ const ApplicationForm = () => {
                                                                     <option value="5">CGPA (Out of 5)</option>
                                                                     <option value="Passed">Passed</option>
                                                                 </select>
-                                                                <input type="text" id="exam3_result" name="exam3_result" placeholder='GPA (out of 4)' onBlur={handleOnblur} style={{ display: hnrs4_display, marginTop: '5px' }} />
-                                                                <input type="text" id="exam3_result" name="exam3_result" onBlur={handleOnblur} style={{ display: hnrs5_display, marginTop: '5px' }} placeholder='GPA (out of 5)' />
+                                                                <input type="text" id="exam3_result2" name="exam3_result" placeholder='GPA (out of 4)' onBlur={handleOnblur} style={{ display: hnrs4_display, marginTop: '5px' }} />
+                                                                <input type="text" id="exam3_result3" name="exam3_result" onBlur={handleOnblur} style={{ display: hnrs5_display, marginTop: '5px' }} placeholder='GPA (out of 5)' />
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -1510,7 +1514,7 @@ const ApplicationForm = () => {
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td style={{ textAlign: 'center', paddingTop: '20px' }}><input type="checkbox" id="declare" value="cheked" onClick={sbBtn} /> I declare that the above information is correct and I would like to submit </td>
+                                            <td style={{ textAlign: 'center', paddingTop: '20px' }}><input type="checkbox" id="declare" value="cheked" onClick={sbBtn} /> <small><i>I declare that the above information is correct and I would like to submit</i></small> </td>
                                         </tr>
                                     </tbody>
                                 </table>
