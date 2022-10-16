@@ -890,7 +890,7 @@ const ApplicationForm = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    alert(`${data.insertedId} Your Application Seccessfully Submitted`)
+                    alert('Your Application Seccessfully Submitted');
                     setId(data.insertedId);
                     e.target.reset();
                 }
@@ -909,7 +909,7 @@ const ApplicationForm = () => {
                             <td>Name of the Post <small style={{ color: 'red' }}>*</small></td>
                             <td>:</td>
                             <td>
-                                <select className='inputField' style={{ backgroundColor: '#bdbaba', width: '100%', outline: 'none' }} name="postName" id="postName" onBlur={handleOnblur}>
+                                <select className='inputField' style={{ backgroundColor: '#bdbaba', width: '100%', outline: 'none' }} name="postName" id="postName" onBlur={handleOnblur} required>
                                     <option value='0'>Select a Post</option>
                                     <option value='Computer Operator'>Computer Operator</option>
                                     <option value='Steno Typist'>Steno Typist</option>
@@ -923,23 +923,23 @@ const ApplicationForm = () => {
                         <tr>
                             <td>Applicant's Name <small style={{ color: 'red' }}>*</small></td>
                             <td>:</td>
-                            <td><input className='inputField' type="text" placeholder=" " name="applicantName" id="applicantName" onBlur={handleOnblur} /></td>
+                            <td><input className='inputField' type="text" placeholder=" " name="applicantName" id="applicantName" onBlur={handleOnblur} required /></td>
                         </tr>
                         <tr>
                             <td>Father's Name <small style={{ color: 'red' }}>*</small></td>
                             <td>:</td>
-                            <td><input className='inputField' type="text" placeholder=" " name="fname" id="fname" onBlur={handleOnblur} /></td>
+                            <td><input className='inputField' type="text" placeholder=" " name="fname" id="fname" onBlur={handleOnblur} required /></td>
                         </tr>
                         <tr>
                             <td>Mother's Name <small style={{ color: 'red' }}>*</small></td>
                             <td>:</td>
-                            <td><input className='inputField' type="text" placeholder=" " name="mname" id="mname" onBlur={handleOnblur} /></td>
+                            <td><input className='inputField' type="text" placeholder=" " name="mname" id="mname" onBlur={handleOnblur} required /></td>
                         </tr>
                         <tr>
                             <td>Gender <small style={{ color: 'red' }}>*</small></td>
                             <td>:</td>
                             <td>
-                                <select style={{ padding: '3px', width: '150px' }} name="gender" id="gender" onBlur={handleOnblur}>
+                                <select style={{ padding: '3px', width: '150px' }} name="gender" id="gender" onBlur={handleOnblur} required>
                                     <option value='0'>Select Gender</option>
                                     <option value='Male'>Male</option>
                                     <option value='Female'>Female</option>
