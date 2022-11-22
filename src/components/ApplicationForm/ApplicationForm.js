@@ -836,7 +836,22 @@ const ApplicationForm = () => {
             union1.push(union[un]);
         }
     }
-
+    function showPreview(event) {
+        if (event.target.files.length > 0) {
+            var src = URL.createObjectURL(event.target.files[0]);
+            var preview = document.getElementById("preview");
+            preview.src = src;
+            preview.style.display = "block";
+        }
+    }
+    function showPreview2(event) {
+        if (event.target.files.length > 0) {
+            var src = URL.createObjectURL(event.target.files[0]);
+            var preview = document.getElementById("preview2");
+            preview.src = src;
+            preview.style.display = "block";
+        }
+    }
 
     function sbBtn() {
 
@@ -1483,9 +1498,12 @@ const ApplicationForm = () => {
 
                                                                         <tr>
                                                                             <td colSpan='2'>
-                                                                                <input type='file'
-                                                                                    onChange={e => console.log(e.target.files[0])}
+                                                                                <input type='file' id='cand_img' style={{ width: '300px' }} onChange={showPreview}
+
                                                                                 />
+                                                                                <div style={{ width: '300px', marginTop: '10px' }} >
+                                                                                    <img id='preview' src='https://i.pinimg.com/736x/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg' alt='' width='100' height='100' />
+                                                                                </div>
                                                                             </td>
                                                                         </tr>
                                                                     </tbody>
@@ -1502,7 +1520,12 @@ const ApplicationForm = () => {
 
                                                                         <tr>
                                                                             <td colSpan='2'>
-                                                                                <input type='file' />
+                                                                                <input type='file' id='cand_sign' style={{ width: '300px' }} onChange={showPreview2}
+
+                                                                                />
+                                                                                <div style={{ width: '300px', marginTop: '10px' }} >
+                                                                                    <img id='preview2' src='https://raw.githubusercontent.com/rashel68/cv-maker/main/signature1.jpg' alt='' width='120' height='80' />
+                                                                                </div>
                                                                             </td>
                                                                         </tr>
                                                                     </tbody>
