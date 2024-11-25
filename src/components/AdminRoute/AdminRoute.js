@@ -35,6 +35,9 @@ const AdminRoute = () => {
                     }
                 </tbody>
             </table>
+            {
+                applicants.map(app => <h2 key={app._id}>{app.applicantName}</h2>)
+            }
         </div>
     );
 };

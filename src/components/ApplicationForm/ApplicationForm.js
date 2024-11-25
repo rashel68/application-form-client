@@ -13,7 +13,7 @@ const ApplicationForm = () => {
     const [exam1, setExam1] = useState([]);
     const [exam2, setExam2] = useState([]);
     const [exam3, setExam3] = useState([]);
-    const [fill, setFill] = useState([]);
+    // const [fill, setFill] = useState([]);
     const [care, setCare] = useState([]);
     const [village, setVillage] = useState([]);
     const [mupzilla, setMupzilla] = useState([]);
@@ -21,15 +21,20 @@ const ApplicationForm = () => {
     const [hsc_gpa, setHsc_gpa] = useState([]);
     const [hnrs_gpa, setHnrs_gpa] = useState([]);
     const { registerUser, isLoading } = useAuth();
+    const [canImg, setCanImg] = useState(null);
+    const [canSign, setCanSign] = useState(null);
+
     // const [isDisable, setIsDisable] = ('');
     // const [isDisabled] = ([]);
 
+
+    // this code write for repl present address to permanent address
     // let cupzilla = mupzilla;
-    let checkboxItem = document.getElementById('p_chk');
-    let permanent = document.getElementById('P_CareOf');
-    let permanentVillage = document.getElementById('P_Village');
-    let permanentDist = document.getElementById('P_District');
-    let permanentUpz = document.getElementById('P_Upz');
+    // let checkboxItem = document.getElementById('p_chk');
+    // let permanent = document.getElementById('P_CareOf');
+    // let permanentVillage = document.getElementById('P_Village');
+    // let permanentDist = document.getElementById('P_District');
+    // let permanentUpz = document.getElementById('P_Upz');
 
 
     let ssc4_display;
@@ -842,7 +847,9 @@ const ApplicationForm = () => {
             var preview = document.getElementById("preview");
             preview.src = src;
             preview.style.display = "block";
+            setCanImg(event.target.files[0]);
         }
+
     }
     function showPreview2(event) {
         if (event.target.files.length > 0) {
@@ -850,6 +857,7 @@ const ApplicationForm = () => {
             var preview = document.getElementById("preview2");
             preview.src = src;
             preview.style.display = "block";
+
         }
     }
 
@@ -883,6 +891,11 @@ const ApplicationForm = () => {
 
     // Submit Form
     const handleAddUser = e => {
+
+        // const formData = new FormData();
+        // formData.append(applicant);
+        // formData.append('image', canImg);
+        // formData.append('sign', canSign);
 
         if (applicant.postName <= 0) {
             alert('plz select a post');

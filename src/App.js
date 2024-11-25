@@ -52,18 +52,24 @@ function App() {
               <Route path="/applicationForm">
                 <ApplicationForm></ApplicationForm>
               </Route>
-              <Route path="/userCollection/update/:id">
+              {/* <Route path="/userCollection/update/:id">
                 <UpdateUser></UpdateUser>
               </Route>
               <PrivateRoute path="/adminRoute">
                 <AdminRoute></AdminRoute>
-              </PrivateRoute>
+              </PrivateRoute> */}
               <Route path="/login">
                 <Login></Login>
               </Route>
-              <PrivateRoute path="/applicant">
+              {/* <PrivateRoute path="/applicant">
                 <Applicant></Applicant>
-              </PrivateRoute>
+              </PrivateRoute> */}
+              <Route path="/adminRoute">
+                <AdminRoute></AdminRoute>
+              </Route>
+              <Route path="/applicant">
+                <Applicant></Applicant>
+              </Route>
             </Switch>
           </div>
         </Router>
